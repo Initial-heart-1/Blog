@@ -1,10 +1,12 @@
 @font-face {
     font-family: 'Harmony';
+    font-display: swap;
     src: url(../font/Harmony.min.woff2);
 }
 
 @font-face {
     font-family: 'SourceCodePro';
+    font-display: swap;
     src: url(../font/SourceCodePro.ttf);
 }
 
