@@ -21,7 +21,7 @@
     <meta name="description" content="前两天我在服务器上安装完 Git 向 Github 提交 SSH Key 时注意到底下出现了一个叫做 “GPG” 的东西，略微看了一眼描述发现这似乎这是用来验证身份的数字签名，我一下就来了兴趣，开始跟着 Github 的文档折腾这个对我来说还算新鲜的玩意儿。 1. 安装 GPG  在安装 GPG 之前，显然我们要先搞明白 GPG 大致是个什么玩意儿：     GPG 是 GnuPG 的缩写，G">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows 10&#x2F;Windows Server 2016+ GPG 签名简明教程">
-<meta property="og:url" content="https://www.initbili.top/2022/cl71q4tsi0001aku7g85m4jzx/">
+<meta property="og:url" content="https://www.initbili.top/2022/cl71swcbv0001n4u7a8haa53y/">
 <meta property="og:site_name" content="Initial_heart&#39;s Blog">
 <meta property="og:description" content="前两天我在服务器上安装完 Git 向 Github 提交 SSH Key 时注意到底下出现了一个叫做 “GPG” 的东西，略微看了一眼描述发现这似乎这是用来验证身份的数字签名，我一下就来了兴趣，开始跟着 Github 的文档折腾这个对我来说还算新鲜的玩意儿。 1. 安装 GPG  在安装 GPG 之前，显然我们要先搞明白 GPG 大致是个什么玩意儿：     GPG 是 GnuPG 的缩写，G">
 <meta property="og:locale" content="zh_CN">
@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://www.initbili.top/img/p1/img_12.png">
 <meta property="og:image" content="https://www.initbili.top/img/p1/img_13.png">
 <meta property="article:published_time" content="2022-08-20T04:59:19.000Z">
-<meta property="article:modified_time" content="2022-08-20T09:46:56.443Z">
+<meta property="article:modified_time" content="2022-08-20T11:11:51.431Z">
 <meta property="article:author" content="Initial heart">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.initbili.top/img/p1/img.png">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          2.1k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          23 分钟
+          24 分钟
         
       </span>
     
@@ -293,7 +293,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：8 分钟前
+                    本文最后更新于：几秒前
                   
                 
               </p>
@@ -335,8 +335,11 @@
   <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">gpg: skipped <span class="hljs-string">&quot;847D5CE3630CD762&quot;</span>: <span class="hljs-literal">No</span><span class="hljs-built_in"> secret </span>key<br></code></pre></td></tr></table></figure>
 
 <p>  看报错的意思是不存在这个密钥，这就奇怪了，明明我已经新建好了密钥，密钥 ID 也没有错误，为什么就是不行呢？我研究了很久，最后找到了问题的答案：需要告诉 Git 你安装 GPG 的位置！</p>
-<p>  你还记得你在第一步时留下的安装路径吗？接下来就要用到它，接着输入：</p>
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config --global gpg.program &quot;你的安装路径&quot;<br></code></pre></td></tr></table></figure>
+<p>  你还记得你在第一步时留下的安装路径吗？接下来就要用到它，打开安装目录下的 <code>bin</code> 文件夹，找到 GPG 的主程序（通常为 <code>gpg.exe</code>），接着在命令提示符中输入：</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config --global gpg.program &quot;你的 GPG 主程序位置&quot;<br></code></pre></td></tr></table></figure>
+
+<p>  例如，我的安装路径在 <code>D:\Gnu\GPG\</code>，那么我输入：</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config --global gpg.program &quot;D:\Gnu\GPG\bin\gpg.exe&quot;<br></code></pre></td></tr></table></figure>
 
 <p>  注意引号不能少！</p>
 <p>  这样如果没有意外的话就可以正常使用你的密钥对你的提交或者标签签名了！</p>
@@ -379,7 +382,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Windows 10/Windows Server 2016+ GPG 签名简明教程</div>
-      <div>https://www.initbili.top/2022/cl71q4tsi0001aku7g85m4jzx/</div>
+      <div>https://www.initbili.top/2022/cl71swcbv0001n4u7a8haa53y/</div>
     </div>
     <div class="license-meta">
       
