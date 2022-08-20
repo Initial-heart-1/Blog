@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Harmony';
+    src: url(../font/Harmony.min.woff2);
+}
+
+@font-face {
+    font-family: 'SourceCodePro';
+    src: url(../font/SourceCodePro.ttf);
+}
+
+* {
+  font-family: 'SourceCodePro', Menlo, Monaco, Consolas, Courier New, 'Harmony' !important
+}
