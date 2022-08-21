@@ -21,7 +21,7 @@
     <meta name="description" content="前两天我在服务器上安装完 Git 向 Github 提交 SSH Key 时注意到底下出现了一个叫做 “GPG” 的东西，略微看了一眼描述发现这似乎这是用来验证身份的数字签名，我一下就来了兴趣，开始跟着 Github 的文档折腾这个对我来说还算新鲜的玩意儿。 1. 安装 GPG  在安装 GPG 之前，显然我们要先搞明白 GPG 大致是个什么玩意儿：     GPG 是 GnuPG 的缩写，G">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows 10&#x2F;Windows Server 2016+ GPG 签名简明教程">
-<meta property="og:url" content="https://www.initbili.top/2022/cl72v5e0g0001vou770r956ab/">
+<meta property="og:url" content="https://www.initbili.top/2022/cl72wqaqg0001zou7ao1a19yg/">
 <meta property="og:site_name" content="Initial_heart&#39;s Blog">
 <meta property="og:description" content="前两天我在服务器上安装完 Git 向 Github 提交 SSH Key 时注意到底下出现了一个叫做 “GPG” 的东西，略微看了一眼描述发现这似乎这是用来验证身份的数字签名，我一下就来了兴趣，开始跟着 Github 的文档折腾这个对我来说还算新鲜的玩意儿。 1. 安装 GPG  在安装 GPG 之前，显然我们要先搞明白 GPG 大致是个什么玩意儿：     GPG 是 GnuPG 的缩写，G">
 <meta property="og:locale" content="zh_CN">
@@ -89,7 +89,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"www.initbili.top","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"www.initbili.top","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":3},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -306,24 +306,24 @@
 <p>  GPG 是 GnuPG 的缩写，GnuPG 是 PGP 在 GPL 下的替代版本。Github 和 Gitee 等代码托管平台通常使用 GPG 为提交和标签签名（至少我看到的如此）。 这可以防止有人冒充你执行提交或者打标签，特别是可以保护标签的安全性。 </p>
 <p>  要安装 GPG，首先当然要下载 GPG 的安装包，在<a target="_blank" rel="noopener" href="https://gpg4win.org/download.html">此处</a>可以下载到。  </p>
 <p>  需要注意的是，单击下载页面后，页面会要求你捐赠，选择 “Bank transfer” 后点击 “Download” 即可正常下载。当然如果你有能力的话还是建议你支持一下！  </p>
-<p>  <img src="/img/p1/img.png" alt="下载页面"></p>
+<p>  <img src="/img/p1/img.png" srcset="/img/loading.gif" lazyload alt="下载页面"></p>
 <p>  下载完成后打开安装向导，直接一路下一步即可，当然你可以根据你的需要更改安装路径，但无论是否更改，一定要记住它，马上就要用到。中间会弹出一个新的安装向导，也一路下一步即可，安装读完条之后关闭这个向导安装才能继续进行。</p>
 <h3 id="2-GPG-配置"><a href="#2-GPG-配置" class="headerlink" title="2. GPG 配置"></a>2. GPG 配置</h3><p>  安装好 GPG 之后，通常你可以在你的桌面找到一个这样的东西：</p>
-<p>  <img src="/img/p1/img_1.png" alt="Kleopatra 图标"></p>
+<p>  <img src="/img/p1/img_1.png" srcset="/img/loading.gif" lazyload alt="Kleopatra 图标"></p>
 <p>  这个叫做 “Kleopatra” 的玩意儿就是 GPG 的 GUI 界面，打开它，你将看到以下内容：</p>
-<p>  <img src="/img/p1/img_2.png" alt="Kleopatra 界面"></p>
+<p>  <img src="/img/p1/img_2.png" srcset="/img/loading.gif" lazyload alt="Kleopatra 界面"></p>
 <p>  点击 “新建密钥对”，会弹出以下界面，按你情况填写，邮箱需要填你 Github 的绑定邮箱。</p>
-<p>  <img src="/img/p1/img_3.png" alt="新建密钥对界面"></p>
+<p>  <img src="/img/p1/img_3.png" srcset="/img/loading.gif" lazyload alt="新建密钥对界面"></p>
 <p>  通常情况下，建议你勾选使用密码保护密钥以确保安全。填写完之后单击新建。</p>
 <p>  如果你勾选了使用密码保护密钥，那么在单击新建之后你会看到这样的界面：</p>
-<p>  <img src="/img/p1/img_4.png" alt="新建密钥中"></p>
+<p>  <img src="/img/p1/img_4.png" srcset="/img/loading.gif" lazyload alt="新建密钥中"></p>
 <p>  输入你准备用来保护你密钥的密码，输两遍然后确认。</p>
 <p>  稍等一会就可以了，新建完密钥对之后回到主页面如果你看到这样的页面说明你已经建好了密钥：</p>
-<p>  <img src="/img/p1/img_5.png" alt="新建好密钥对的 Kleopatra 界面"></p>
+<p>  <img src="/img/p1/img_5.png" srcset="/img/loading.gif" lazyload alt="新建好密钥对的 Kleopatra 界面"></p>
 <p>  那么就该进行下一步了。</p>
 <h3 id="3-将你的密钥告诉-Git"><a href="#3-将你的密钥告诉-Git" class="headerlink" title="3. 将你的密钥告诉 Git"></a>3. 将你的密钥告诉 Git</h3><p>  要让 Git 在提交和新建标签时使用你的密钥签名，当然需要把你的密钥告诉 Git。</p>
 <p>  回到 Kleopatra，找到你新建的密钥，看见 “密钥 ID” 那一行了吗？点击它并按下 Ctrl + C 以复制它。</p>
-<p>  <img src="/img/p1/img_6.png" alt="点它"></p>
+<p>  <img src="/img/p1/img_6.png" srcset="/img/loading.gif" lazyload alt="点它"></p>
 <p>  将它粘贴到任意文本框内，将中间的所有空格删除，比如我的 ID 是 <code>847D 5CE3 630C D762</code>，那么需要处理成 <code>847D5CE3630CD762</code>。</p>
 <p>  随后 Win+R 输入 cmd 回车打开命令提示符，输入：</p>
   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config --global user.signingkey 你刚刚处理过的密钥<br></code></pre></td></tr></table></figure>
@@ -346,23 +346,23 @@
 <p>  在执行这些操作时如果你在创建密钥的时候选择了使用密码保护密钥则必须键入你的密钥密码，如果没有密码则无法使用，所以务必牢记你的密码！</p>
 <p>  但是想要让 Github 认可你的签名，你还要将你的公钥告诉 Github。</p>
 <h3 id="4-将你的密钥告诉-Github"><a href="#4-将你的密钥告诉-Github" class="headerlink" title="4. 将你的密钥告诉 Github"></a>4. 将你的密钥告诉 Github</h3><p>  再次回到 Kleopatra，右键你的密钥选择 “导出”：</p>
-<p>  <img src="/img/p1/img_7.png" alt="右键导出"></p>
+<p>  <img src="/img/p1/img_7.png" srcset="/img/loading.gif" lazyload alt="右键导出"></p>
 <p>  选择一个方便的路径，比如说桌面，检查文件名是否含有 “public” 字样，然后确定。</p>
 <p>  找到刚刚导出的密钥，使用文本编辑器打开（如果你没法直接打开请把后缀改为 txt），然后暂且放在一边。</p>
 <p>  打开 Github 首页，点击你的头像后选择 “Settings”</p>
-<p>  <img src="/img/p1/img_8.png" alt="Github 头像"></p>
+<p>  <img src="/img/p1/img_8.png" srcset="/img/loading.gif" lazyload alt="Github 头像"></p>
 <p>  打开 Settings 后在左侧找到 “SSH and GPG keys”：</p>
-<p>  <img src="/img/p1/img_9.png" alt="Github Settings"></p>
+<p>  <img src="/img/p1/img_9.png" srcset="/img/loading.gif" lazyload alt="Github Settings"></p>
 <p>  点击 “New GPG keys”：</p>
-<p>  <img src="/img/p1/img_10.png" alt="SSH and GPG keys"></p>
+<p>  <img src="/img/p1/img_10.png" srcset="/img/loading.gif" lazyload alt="SSH and GPG keys"></p>
 <p>  随便输入一个标题，把刚刚打开的密钥全部贴进去，然后点击 “Add GPG key”：</p>
-<p> <img src="/img/p1/img_11.png" alt="Add GPG key"></p>
+<p> <img src="/img/p1/img_11.png" srcset="/img/loading.gif" lazyload alt="Add GPG key"></p>
 <p>  这时通常会要求你进行身份验证，输入你的账户密码之后确认。</p>
 <p>  然后就完成了！现在你的提交和标签会显示 “Verified” 字样。</p>
-<p>  <img src="/img/p1/img_12.png" alt="Verified！"></p>
+<p>  <img src="/img/p1/img_12.png" srcset="/img/loading.gif" lazyload alt="Verified！"></p>
 <p>  如果你想进一步增强安全性，还可以回到刚才的 “SSH and GPG keys” 页面，将底部的 “Flag unsigned commits as unverified” 勾选上，这样未经你签名但是写着你账户信息的提交全部会被标记为 “Unverified”。</p>
 <p>  但是务必注意，这会对你以前的提交产生影响，所以你可以在你的个人资料上做好说明，例如这样：</p>
-<p>  <img src="/img/p1/img_13.png" alt="个人资料说明"></p>
+<p>  <img src="/img/p1/img_13.png" srcset="/img/loading.gif" lazyload alt="个人资料说明"></p>
 <p>  Enjoy！</p>
 
                 
@@ -382,7 +382,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Windows 10/Windows Server 2016+ GPG 签名简明教程</div>
-      <div>https://www.initbili.top/2022/cl72v5e0g0001vou770r956ab/</div>
+      <div>https://www.initbili.top/2022/cl72wqaqg0001zou7ao1a19yg/</div>
     </div>
     <div class="license-meta">
       
@@ -417,7 +417,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/cl72v5e0k0002vou7ciml383x/" title="《明日方舟》机器人（其实是 QQBot 框架） Amiya-Bot 简明部署教程">
+                      <a href="/2022/cl72wqaqs0002zou710cs69c8/" title="《明日方舟》机器人（其实是 QQBot 框架） Amiya-Bot 简明部署教程">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">《明日方舟》机器人（其实是 QQBot 框架） Amiya-Bot 简明部署教程</span>
                         <span class="visible-mobile">上一篇</span>
@@ -569,6 +569,10 @@
 
 
 
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
