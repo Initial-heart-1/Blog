@@ -21,7 +21,7 @@
     <meta name="description" content="在 CQ 还没凉那会儿笔者就在折腾 QQBot 了，第一次整 Bot 至今得有个七八年了，但是 CQ 凉了之后就没整了，很巧的是那会入坑了方舟（被朋友拖进来的），后来见着了一个能合成游戏内抽卡图的机器人，首先就觉得惊奇，CQ 都凉了机器人是越来越罕见，然后觉得这玩意儿挺好，我得整一个。   那会这个机器人，也就是 Amiya-Bot，才刚 v3，笔者尝试部署，然后就被文档整懵了，遂放弃。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《明日方舟》机器人（其实是 QQBot 框架） Amiya-Bot 简明部署教程">
-<meta property="og:url" content="https://www.initbili.top/2022/cl734j0iw0002xku7fx0x4z9r/">
+<meta property="og:url" content="https://www.initbili.top/2022/cl735gmsq0002gku7c3j0f5h4/">
 <meta property="og:site_name" content="Initial_heart&#39;s Blog">
 <meta property="og:description" content="在 CQ 还没凉那会儿笔者就在折腾 QQBot 了，第一次整 Bot 至今得有个七八年了，但是 CQ 凉了之后就没整了，很巧的是那会入坑了方舟（被朋友拖进来的），后来见着了一个能合成游戏内抽卡图的机器人，首先就觉得惊奇，CQ 都凉了机器人是越来越罕见，然后觉得这玩意儿挺好，我得整一个。   那会这个机器人，也就是 Amiya-Bot，才刚 v3，笔者尝试部署，然后就被文档整懵了，遂放弃。">
 <meta property="og:locale" content="zh_CN">
@@ -32,8 +32,9 @@
 <meta property="og:image" content="https://www.initbili.top/img/p2/img_4.png">
 <meta property="og:image" content="https://www.initbili.top/img/p2/img_5.png">
 <meta property="og:image" content="https://www.initbili.top/img/p2/img_6.png">
+<meta property="og:image" content="https://www.initbili.top/img/p2/img_7.png">
 <meta property="article:published_time" content="2022-08-20T16:02:21.000Z">
-<meta property="article:modified_time" content="2022-08-21T07:07:04.420Z">
+<meta property="article:modified_time" content="2022-08-21T09:49:50.461Z">
 <meta property="article:author" content="Initial heart">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.initbili.top/img/p2/img.png">
@@ -243,7 +244,7 @@
         
         
         
-          72 分钟
+          71 分钟
         
       </span>
     
@@ -322,7 +323,7 @@
 <p>  下载完之后复制到你准备用来放 mirai 的目录，然后打开它。可能会弹出 UAC 警告，请确定。</p>
 <p>  然后你会看到以下界面：</p>
 <p>  <img src="/img/p2/img_1.png" srcset="/img/loading.gif" lazyload alt="mcli 的初始界面"></p>
-<p>  通常来说，如果你不是跟 Java 相关的开发者，是不会有如此高的 Java 版本的，最可能出现的是”1.8.0“甚至是没有 Java，那么笔者假设自己是”1.8.0“，并不满足 mirai 推荐的 Java 版本，所以我们输入 <code>Y</code> 并回车（当然如果你安装了版本 ≥11 的 JDK 那么可以选择输入N，但，Java 算不上大，独立隔离不影响系统的最新 Java 谁不爱呢？）。</p>
+<p>  通常来说，如果你不是跟 Java 相关的开发者，是不会有如此高的 Java 版本的，最可能出现的是 <code>1.8.0</code> 甚至是没有 Java，那么笔者假设自己是 <code>1.8.0</code>，并不满足 mirai 推荐的 Java 版本，所以我们输入 <code>Y</code> 并回车（当然如果你安装了版本 ≥11 的 JDK 那么可以选择输入N，但，Java 算不上大，独立隔离不影响系统的最新 Java 谁不爱呢？）。</p>
 <p>  接下来会让你选择一系列选项，不一一放图讲解了，针对每个选项进行说明：</p>
 <p>  Java 版本：推荐是能选到的最高，原因有多方面不展开讲，也许有机会会单独讲。</p>
 <p>  JRE or JDK：推荐 <code>JDK</code>，不解释。</p>
@@ -361,7 +362,7 @@
 <p>  输入上面要求要输的请求码，点下一步，会跳转验证码界面，完成之后会自动上传到服务器，服务器将 ticket 下发到你的机器，验证就通过了！十分地简单！</p>
 <p>  接下来你大概会疑惑：怎么又弹了个窗？</p>
 <p>  这次可不是验证码，这次是设备锁：</p>
-<p>  【这里还缺一张图笔者醒来再补】</p>
+<p>  <img src="/img/p2/img_7.png" srcset="/img/loading.gif" lazyload alt="设备锁弹窗 图片由用户友情提供"></p>
 <p>  想通过设备锁有很多种方法，但都有一个前提要求：手机与电脑在同一网络环境下（出口 IP 最好相同），而如果你的机器不在你身边，还有替代方法可以让你和机器 <code>统一出口 IP</code>，但是我不能也不敢展开讲，懂得都懂。</p>
 <p>  简单口述两种最简单的方法：</p>
 <p>  ①将链接直接复制进浏览器打开，拿出手机登录账号扫码验证。</p>
@@ -380,7 +381,7 @@
 <p>  当出现消息 <code>mirai-console started successfully.</code> 时，你可以在 mcl 中输入 <code>exit</code> 或者 <code>stop</code> 来安全退出，一般推荐以此种方式关闭 mcl。</p>
 <h4 id="II-手动安装"><a href="#II-手动安装" class="headerlink" title="II. 手动安装"></a>II. 手动安装</h4><p>  这稍微麻烦一些，但并不难，如果你无法使用第一种方式或者不想用等种种原因，你可以使用手动安装。</p>
 <p>  首先，打开 mah 的 <a target="_blank" rel="noopener" href="https://github.com/project-mirai/mirai-api-http/releases">Release</a>，下载最新的稳定版本，相关操作与上面 MCLI 类似，不再赘述。</p>
-<p>  就像 Minecraft 安装 Mod 一样，Mirai 安装插件也只需要将 jar 文件拖入 <code>plugins</code> 文件夹即可，然后请按初始化 MCL 的方式操作一遍来生成配置。</p>
+<p>  就像 Minecraft 安装 Mod 一样，手动安装 Mirai 插件也只需要将 jar 文件拖入 <code>plugins</code> 文件夹即可，然后请按初始化 MCL 的方式操作一遍来生成配置。</p>
 <p>  无论你选择哪一种方法安装，安装并初始化 MAH 完成后，混凝土车已经到场，只差最后的方案了，接下来我们进行 MAH 的配置。</p>
 <h3 id="5-配置-mirai-api-http"><a href="#5-配置-mirai-api-http" class="headerlink" title="5. 配置 mirai-api-http"></a>5. 配置 mirai-api-http</h3><p>  就像之前配置过的 <code>Autologin.yml</code> 一样，配置 MAH 也有一些不变的基本原则，也就是 yaml 的格式。</p>
 <p>  记住，<strong>参数冒号后边一定要加一个空格！！！</strong></p>
@@ -435,7 +436,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>《明日方舟》机器人（其实是 QQBot 框架） Amiya-Bot 简明部署教程</div>
-      <div>https://www.initbili.top/2022/cl734j0iw0002xku7fx0x4z9r/</div>
+      <div>https://www.initbili.top/2022/cl735gmsq0002gku7c3j0f5h4/</div>
     </div>
     <div class="license-meta">
       
@@ -474,7 +475,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/cl734j0ir0001xku7dfcnayyc/" title="Windows 10/Windows Server 2016+ GPG 签名简明部署教程">
+                      <a href="/2022/cl735gmsm0001gku79c4v484w/" title="Windows 10/Windows Server 2016+ GPG 签名简明部署教程">
                         <span class="hidden-mobile">Windows 10/Windows Server 2016+ GPG 签名简明部署教程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
