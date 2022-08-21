@@ -15,6 +15,7 @@
   src: url('//at.alicdn.com/t/font_1736178_lbnruvf0jn.woff2?t=1638112270225') format('woff2'),
        url('//at.alicdn.com/t/font_1736178_lbnruvf0jn.woff?t=1638112270225') format('woff'),
        url('//at.alicdn.com/t/font_1736178_lbnruvf0jn.ttf?t=1638112270225') format('truetype');
+}
 
 * {
   font-family: 'SourceCodePro', Menlo, Monaco, Consolas, Courier New, 'Harmony' !important
