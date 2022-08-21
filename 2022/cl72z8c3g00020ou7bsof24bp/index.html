@@ -21,7 +21,7 @@
     <meta name="description" content="在 CQ 还没凉那会儿笔者就在折腾 QQBot 了，第一次整 Bot 至今得有个七八年了，但是 CQ 凉了之后就没整了，很巧的是那会入坑了方舟（被朋友拖进来的），后来见着了一个能合成游戏内抽卡图的机器人，首先就觉得惊奇，CQ 都凉了机器人是越来越罕见，然后觉得这玩意儿挺好，我得整一个。   那会这个机器人，也就是 Amiya-Bot，才刚 v3，笔者尝试部署，然后就被文档整懵了，遂放弃。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《明日方舟》机器人（其实是 QQBot 框架） Amiya-Bot 简明部署教程">
-<meta property="og:url" content="https://www.initbili.top/2022/cl72wwie50002r4u75mi9ddco/">
+<meta property="og:url" content="https://www.initbili.top/2022/cl72z8c3g00020ou7bsof24bp/">
 <meta property="og:site_name" content="Initial_heart&#39;s Blog">
 <meta property="og:description" content="在 CQ 还没凉那会儿笔者就在折腾 QQBot 了，第一次整 Bot 至今得有个七八年了，但是 CQ 凉了之后就没整了，很巧的是那会入坑了方舟（被朋友拖进来的），后来见着了一个能合成游戏内抽卡图的机器人，首先就觉得惊奇，CQ 都凉了机器人是越来越罕见，然后觉得这玩意儿挺好，我得整一个。   那会这个机器人，也就是 Amiya-Bot，才刚 v3，笔者尝试部署，然后就被文档整懵了，遂放弃。">
 <meta property="og:locale" content="zh_CN">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://www.initbili.top/img/p2/img_5.png">
 <meta property="og:image" content="https://www.initbili.top/img/p2/img_6.png">
 <meta property="article:published_time" content="2022-08-20T16:02:21.000Z">
-<meta property="article:modified_time" content="2022-08-21T05:51:23.802Z">
+<meta property="article:modified_time" content="2022-08-21T06:56:54.189Z">
 <meta property="article:author" content="Initial heart">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.initbili.top/img/p2/img.png">
@@ -314,7 +314,7 @@
 <p>  那么，mirai-api-http是什么？mirai-api-http（下称 MAH 或 mah） 是 mirai-console 的一个插件，原生的 mirai-console 插件使用 kt 或 java 编写，mirai-api-http 通过提供 API 的方式让更多语言可以接入 mirai-console。</p>
 <p>  mirai 的相关介绍，由于其项目 README 有些限制，我不好引用，所以请 <a target="_blank" rel="noopener" href="https://github.com/mamoe/mirai">自己去看</a></p>
 <p>  那么基本情况就介绍到这里，接下来开始正式的部署。</p>
-<h3 id="2-部署-mirai"><a href="#2-部署-mirai" class="headerlink" title="2. 部署 mirai"></a>2. 部署 mirai</h3><p>  都说 Amiya-Bot 基于 mirai-api-http 了，那当然先得从”基于“开始做起嘛。就好像盖房子总得先盖地基一样，而 mirai-api-http 又基于 mirai-console （一般用户方便理解可以直接看作 mirai 本体），mirai 就像地基填的混凝土，而 mah 则是钢筋，所以我们先来进行混凝土的制作，也就是 mirai 的部署。</p>
+<h3 id="2-部署-mirai"><a href="#2-部署-mirai" class="headerlink" title="2. 部署 mirai"></a>2. 部署 mirai</h3><p>  都说 Amiya-Bot 基于 mirai-api-http 了，那当然先得从”基于“开始做起嘛。就好像盖房子总得先盖地基一样，而 mirai-api-http 又基于 mirai-console （一般用户方便理解可以直接看作 mirai 本体），mirai 就像地基填的混凝土，而 mah 则是钢筋。所以我们先来进行混凝土的制作，也就是 mirai 的部署。</p>
 <p>  部署 mirai 对于一般用户来说就是部署 mirai-console，mirai-console 有个启动器叫做 Mirai Console Loader 简称 MCL（下称可能为 mcl），而 MCL 又有个安装器叫做 MCL Installer（下称 MCLI 或 mcli），所以我们现在先去下载 MCL Installer。</p>
 <p>  打开 <a target="_blank" rel="noopener" href="https://github.com/iTXTech/mcl-installer/releases">此页面</a>，找到最新的稳定 Release，下载对应你系统的版本。</p>
 <p>  一般情况下，请下载含有 <code>x86</code> 的版本而不是 <code>arm64</code>。</p>
@@ -434,7 +434,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>《明日方舟》机器人（其实是 QQBot 框架） Amiya-Bot 简明部署教程</div>
-      <div>https://www.initbili.top/2022/cl72wwie50002r4u75mi9ddco/</div>
+      <div>https://www.initbili.top/2022/cl72z8c3g00020ou7bsof24bp/</div>
     </div>
     <div class="license-meta">
       
@@ -473,7 +473,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/cl72wwie10001r4u71tyq6o6p/" title="Windows 10/Windows Server 2016+ GPG 签名简明教程">
+                      <a href="/2022/cl72z8c3c00010ou731ar5a0y/" title="Windows 10/Windows Server 2016+ GPG 签名简明教程">
                         <span class="hidden-mobile">Windows 10/Windows Server 2016+ GPG 签名简明教程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
