@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p2/img_9.png">
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p2/img_10.png">
 <meta property="article:published_time" content="2022-08-20T16:02:21.000Z">
-<meta property="article:modified_time" content="2022-08-22T06:28:35.024Z">
+<meta property="article:modified_time" content="2022-08-22T06:52:27.960Z">
 <meta property="article:author" content="Initial heart">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://initialheart.oss.aunly.cn/img/p2/img.png">
@@ -315,7 +315,7 @@
 <p>  那么，mirai-api-http是什么？mirai-api-http（下称 MAH 或 mah） 是 mirai-console 的一个插件，原生的 mirai-console 插件使用 kt 或 java 编写，mirai-api-http 通过提供 API 的方式让更多语言可以接入 mirai-console。</p>
 <p>  mirai 的相关介绍，由于其项目 README 有些限制，我不好引用，所以请 <a target="_blank" rel="noopener" href="https://github.com/mamoe/mirai">自己去看</a></p>
 <p>  那么基本情况就介绍到这里，接下来开始正式的部署。</p>
-<h3 id="2-部署-mirai"><a href="#2-部署-mirai" class="headerlink" title="2. 部署 mirai"></a>2. 部署 mirai</h3><p>  都说 Amiya-Bot 基于 mirai-api-http 了，那当然先得从”基于“开始做起嘛。就好像盖房子总得先盖地基一样，而 mirai-api-http 又基于 mirai-console （一般用户方便理解可以直接看作 mirai 本体），mirai 就像地基填的混凝土，而 mah 则是钢筋。所以我们先来进行混凝土的制作，也就是 mirai 的部署。</p>
+<h3 id="2-部署-mirai"><a href="#2-部署-mirai" class="headerlink" title="2. 部署 mirai"></a>2. 部署 mirai</h3><p>  都说 Amiya-Bot 基于 mirai-api-http 了，那当然先得从“基于”开始做起嘛。就好像盖房子总得先盖地基一样，而 mirai-api-http 又基于 mirai-console （一般用户方便理解可以直接看作 mirai 本体），mirai 就像地基填的混凝土，而 mah 则是钢筋。所以我们先来进行混凝土的制作，也就是 mirai 的部署。</p>
 <p>  部署 mirai 对于一般用户来说就是部署 mirai-console，mirai-console 有个启动器叫做 Mirai Console Loader 简称 MCL（下称可能为 mcl），而 MCL 又有个安装器叫做 MCL Installer（下称 MCLI 或 mcli），所以我们现在先去下载 MCL Installer。</p>
 <p>  打开 <a target="_blank" rel="noopener" href="https://github.com/iTXTech/mcl-installer/releases">此页面</a>，找到最新的稳定 Release，下载对应你系统的版本。</p>
 <p>  一般情况下，请下载含有 <code>x86</code> 的版本而不是 <code>arm64</code>。</p>
@@ -331,7 +331,7 @@
 <p>  然后会开始 Java 的下载，下载完后会出现 MCL 的公告，并有最新的 MCL 版本，询问你是否下载 MCL ，那当然是毫无疑问的选择 <code>Y</code>。</p>
 <p>  <img src="//initialheart.oss.aunly.cn/img/p2/img_2.png" srcset="/img/loading.gif" lazyload alt="mcli 询问是否下载 MCL，截至截稿时最新版本为 2.1.0"></p>
 <p>  选择好之后，很快会下载完成，按任意键就可以退出 MCLI，这个时候你可以安全的删除 MCLI 主程序。</p>
-<p>  现在你已经做好了混凝土的水泥，是时候找一些砂石混进去了，接下来就是配置了。</p>
+<p>  现在你已经做好了混凝土中的水泥，是时候找一些砂石混进去了，接下来就是配置了。</p>
 <h3 id="3-配置-MCL"><a href="#3-配置-MCL" class="headerlink" title="3. 配置 MCL"></a>3. 配置 MCL</h3><p>  首先，我们要弄清楚如果你正确安装了 MCL，安装文件夹的目录结构是怎样的。</p>
 <p>  在没有第一次运行 mcl 执行初始化时，安装目录结构如下：</p>
   <figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs dos">注：已删除 mcli<br>  <br>├─ LICENSE  <br>├─ README.<span class="hljs-built_in">md</span>  <br>├─ java  <br>├─ mcl  <br>├─ mcl.<span class="hljs-built_in">cmd</span>  <br>└─ mcl.jar<br></code></pre></td></tr></table></figure>
@@ -341,7 +341,7 @@
 <p>  在第一次启动 mcl 时，mcl 会自动下载最新的必要库或插件，列表如下：</p>
   <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">net<span class="hljs-selector-class">.mamoe</span>:mirai-console<br>net<span class="hljs-selector-class">.mamoe</span>:mirai-console-terminal<br>net<span class="hljs-selector-class">.mamoe</span>:mirai-core-<span class="hljs-attribute">all</span><br>org<span class="hljs-selector-class">.itxtech</span>:mcl-addon<br></code></pre></td></tr></table></figure>
 
-<p>  当完成初始化（mcl 启动成功）时，mcl 会输出消息 <code>mirai-console started successfully.</code>。当你看到这条消息时，你就可以把 mcl 的窗口关上了。</p>
+<p>  当完成初始化（mirai 启动成功）时，控制台会输出消息 <code>mirai-console started successfully.</code>。当你看到这条消息时，你就可以把 mcl 的窗口关上了。</p>
 <p>  完成初始化后，安装目录结构如下：</p>
   <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">├─ LICENSE<br>├─ README.md<br>├─ <span class="hljs-built_in">config</span><br>├─ <span class="hljs-built_in">config</span>.<span class="hljs-keyword">json</span><br><span class="hljs-keyword"></span>├─ data<br>├─ <span class="hljs-keyword">java</span><br><span class="hljs-keyword"></span>├─ libs<br>├─ logs<br>├─ mcl<br>├─ mcl.cmd<br>├─ mcl.<span class="hljs-keyword">jar</span><br><span class="hljs-keyword"></span>├─ plugin-libraries<br>├─ plugin-<span class="hljs-keyword">shared-libraries</span><br><span class="hljs-keyword"></span>└─ plugins<br></code></pre></td></tr></table></figure>
 
@@ -353,8 +353,8 @@
 <p>  配置好之后保存退出。</p>
 <p>  接下来再次打开 mcl，在一段时间的加载后会弹出这样的一个窗口：</p>
 <p>  <img src="//initialheart.oss.aunly.cn/img/p2/img_4.png" srcset="/img/loading.gif" lazyload alt="mirai 的验证码弹窗 图片由用户友情提供"></p>
-<p>  写得很清楚，”需要滑动验证码“，那么应该怎么获得 mirai 需要的 ticket 呢？</p>
-<p>  既然你是冲着这个教程来的，当然是介绍最简单的方法！点击图中的 <code>Open with TxCaptchaHelper</code> 按钮，会弹出一个新的窗口：</p>
+<p>  写得很清楚，“需要滑动验证码”，那么应该怎么获得 mirai 需要的 ticket 呢？</p>
+<p>  既然你是冲着这个教程来的，当然是先介绍最简单的方法！点击图中的 <code>Open with TxCaptchaHelper</code> 按钮，会弹出一个新的窗口：</p>
 <p>  <img src="//initialheart.oss.aunly.cn/img/p2/img_5.png" srcset="/img/loading.gif" lazyload alt="TxCaptchaHelper 请求码弹窗 图片由用户友情提供"></p>
 <p>  你可以在 <a target="_blank" rel="noopener" href="https://github.com/mzdluo123/TxCaptchaHelper/releases">这里</a> 下载到手机端，1.3 或者 1.2 任选（截稿时的最新版是 1.3，笔者使用 1.2，因为笔者死活上不去 AppCenter）。</p>
 <p>  拿出你的手机，安装上面的手机端，然后打开它，它的界面是这样的：</p>
@@ -407,15 +407,15 @@
   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">playwright install chromium<br></code></pre></td></tr></table></figure>
 
 <p>  在部署过程中遇到其他问题可以加入项目的官方频道或者发电邮到 <code>support@amiya.cn</code>。</p>
-<h3 id="7-高级使用与二次开发"><a href="#7-高级使用与二次开发" class="headerlink" title="7. 高级使用与二次开发"></a>7. 高级使用与二次开发</h3><h4 id="I-高级使用"><a href="#I-高级使用" class="headerlink" title="I. 高级使用"></a>I. 高级使用</h4><h6 id="1-数据库"><a href="#1-数据库" class="headerlink" title="1. 数据库"></a>1. 数据库</h6><p>  如果你的用户很多，默认的 <code>Sqlite</code> 无法满足你的需求，你还可以使用 <code>Mysql</code>。</p>
+<h3 id="7-高级使用与二次开发"><a href="#7-高级使用与二次开发" class="headerlink" title="7. 高级使用与二次开发"></a>7. 高级使用与二次开发</h3><h4 id="I-高级使用"><a href="#I-高级使用" class="headerlink" title="I. 高级使用"></a>I. 高级使用</h4><h5 id="1-数据库"><a href="#1-数据库" class="headerlink" title="1. 数据库"></a>1. 数据库</h5><p>  如果你的用户很多，默认的 <code>Sqlite</code> 无法满足你的需求，你还可以使用 <code>Mysql</code>。</p>
 <p>  在 <code>config\private\database.yaml</code> 中可以配置使用的数据库，如果想使用 <code>Mysql</code>，请按下面的配置说明进行配置：</p>
   <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">mysql:</span><br>    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">config:</span><br>        <span class="hljs-attr">host:</span> <span class="hljs-string">数据库地址</span><br>        <span class="hljs-attr">port:</span> <span class="hljs-string">数据库端口</span><br>        <span class="hljs-attr">user:</span> <span class="hljs-string">登录用户名</span><br>        <span class="hljs-attr">password:</span> <span class="hljs-string">登录密码</span><br>    <span class="hljs-attr">databases:</span><br>        <span class="hljs-attr">bot:</span> <span class="hljs-string">amiya_bot</span><br>        <span class="hljs-attr">group:</span> <span class="hljs-string">amiya_group</span><br>        <span class="hljs-attr">message:</span> <span class="hljs-string">amiya_message</span><br>        <span class="hljs-attr">user:</span> <span class="hljs-string">amiya_user</span><br><br><span class="hljs-attr">sqlite:</span><br>    <span class="hljs-attr">bot:</span> <span class="hljs-string">database/bot.db</span><br>    <span class="hljs-attr">group:</span> <span class="hljs-string">database/group.db</span><br>    <span class="hljs-attr">message:</span> <span class="hljs-string">database/message.db</span><br>    <span class="hljs-attr">user:</span> <span class="hljs-string">database/user.db</span><br></code></pre></td></tr></table></figure>
 
 <p>  需要在 <code>Mysql</code> 中新建四个库，库名可以自己设定，填在上方的 <code>databases</code> 中，当然推荐是使用配置默认的这四个名称。</p>
 <p>  在 <code>Mysql</code> 启用时，<code>Sqlite</code> 的配置会被忽略，也不会使用它。</p>
-<h6 id="2-添加表情"><a href="#2-添加表情" class="headerlink" title="2. 添加表情"></a>2. 添加表情</h6><p>  不知道你是否注意到了，当你发送 <code>兔兔</code> 这类呼叫而不触发任何功能语句时，Amiya 会随机回复一些表情包。这些表情包同样是可以自由增减的。</p>
+<h5 id="2-添加表情"><a href="#2-添加表情" class="headerlink" title="2. 添加表情"></a>2. 添加表情</h5><p>  不知道你是否注意到了，当你发送 <code>兔兔</code> 这类呼叫而不触发任何功能语句时，Amiya 会随机回复一些表情包。这些表情包同样是可以自由增减的。</p>
 <p>  将想要添加的图片放入 <code>resource\images\face</code> 中即可，支持 <code>GIF</code>。</p>
-<h6 id="3-手动获取验证码-ticket"><a href="#3-手动获取验证码-ticket" class="headerlink" title="3.手动获取验证码 ticket"></a>3.手动获取验证码 ticket</h6><p>  有时候可能你不方便或者懒得使用手机通过验证码，你还可以使用电脑手动获得 ticket。</p>
+<h5 id="3-手动获取验证码-ticket"><a href="#3-手动获取验证码-ticket" class="headerlink" title="3.手动获取验证码 ticket"></a>3.手动获取验证码 ticket</h5><p>  有时候可能你不方便或者懒得使用手机通过验证码，你还可以使用电脑手动获得 ticket。</p>
 <blockquote>
 <p>为什么初次部署要求你一定要有手机？因为随后还有设备锁等着你。</p>
 </blockquote>
