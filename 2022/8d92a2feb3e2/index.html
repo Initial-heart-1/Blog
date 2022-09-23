@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p2/img_9.png">
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p2/img_10.png">
 <meta property="article:published_time" content="2022-08-20T16:02:21.000Z">
-<meta property="article:modified_time" content="2022-08-22T06:52:27.960Z">
+<meta property="article:modified_time" content="2022-09-23T12:22:36.214Z">
 <meta property="article:author" content="Initial heart">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://initialheart.oss.aunly.cn/img/p2/img.png">
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.8k 字
+          7.1k 字
         
       </span>
     
@@ -243,7 +243,7 @@
         
         
         
-          76 分钟
+          80 分钟
         
       </span>
     
@@ -286,7 +286,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年8月22日 下午
+                    本文最后更新于：2022年9月23日 晚上
                   
                 
               </p>
@@ -297,9 +297,9 @@
                 <p>  在 CQ 还没凉那会儿笔者就在折腾 QQBot 了，第一次整 Bot 至今得有个七八年了，但是 CQ 凉了之后就没整了，很巧的是那会入坑了方舟（被朋友拖进来的），后来见着了一个能合成游戏内抽卡图的机器人，首先就觉得惊奇，CQ 都凉了机器人是越来越罕见，然后觉得这玩意儿挺好，我得整一个。</p>
 <p>  那会这个机器人，也就是 Amiya-Bot，才刚 v3，笔者尝试部署，然后就被文档整懵了，遂放弃。</p>
 <p>  真正的第一次成功部署在 v4，那时数据库改成了 sqlite，免配置。</p>
-<p>  现在这个项目的最新稳定版本是 v5，截至截稿之时 v6 发布了第二个 Alpha 版本。</p>
+<p>  现在这个项目的最新稳定版本是 v5，截至截稿之时 v6 发布了第二个 Alpha 版本。（2022-09-23 更新：v6 已更新至 Beta2，现在我们推荐你选择 v6！）</p>
 <p>  废话说得太多了，现在开始讲如何部署。</p>
-<p>  在开始之前，需要说明的是，笔者因为自己就被文档坑过，所以为该项目完善了一些文档，下面可能会大量引用（当然，引用的文档不一定是笔者编写的），直接放上相关链接来看，本文只重点讲解文档没有涉及到的部分，比如 mirai 的部署和配置。引用的文档与本文采用相同方式许可。</p>
+<p>  在开始之前，需要说明的是，笔者因为自己就被文档坑过，所以为该项目完善了一些文档，下面可能会大量引用（当然，引用的文档不一定是笔者编写的），直接放上相关链接来看，本文只重点讲解文档没有涉及到的部分，比如 mirai 的部署和配置。引用的来自 AmiyaBot 的文档与本文采用相同方式许可。</p>
 <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>  笔者在 Windows 环境下部署并编写本文，所以使用 Linux 的用户可能不能照抄，但是思路是一样的，抄个思路一般也没问题，不过要注意你的系统是否符合项目要求，具体系统要求如下：</p>
 <blockquote>
 <ul>
@@ -313,7 +313,8 @@
 <p>  在开始正式部署前，我们有必要先了解一下项目的基本情况，否则可能会造成一些困扰。</p>
 <p>  Amiya-Bot 是基于 mirai-api-http 的 Python “《明日方舟》机器人”（其实你完全可以把 ta 当一个机器人框架使用）。</p>
 <p>  那么，mirai-api-http是什么？mirai-api-http（下称 MAH 或 mah） 是 mirai-console 的一个插件，原生的 mirai-console 插件使用 kt 或 java 编写，mirai-api-http 通过提供 API 的方式让更多语言可以接入 mirai-console。</p>
-<p>  mirai 的相关介绍，由于其项目 README 有些限制，我不好引用，所以请 <a target="_blank" rel="noopener" href="https://github.com/mamoe/mirai">自己去看</a></p>
+<p>  mirai 的相关介绍，由于其项目 README 有些限制，我不好引用，所以请 <a target="_blank" rel="noopener" href="https://github.com/mamoe/mirai">自己去看</a>    </p>
+<p>  2022-09-23 补充一句：本文系在 2022-08-21 完成大部分内容的编写的，当时项目的最新生产版本为 v5。所以本文，包括下方高级使用与二次开发中提到的对于 AmiyaBot 的部分都存在一个前提，即在 v5 下。现在，我强烈推荐你选择即将完工的 v6。具体事项请参阅 <code>部署 Amiya-Bot</code> 部分。Good luck！    </p>
 <p>  那么基本情况就介绍到这里，接下来开始正式的部署。</p>
 <h3 id="2-部署-mirai"><a href="#2-部署-mirai" class="headerlink" title="2. 部署 mirai"></a>2. 部署 mirai</h3><p>  都说 Amiya-Bot 基于 mirai-api-http 了，那当然先得从“基于”开始做起嘛。就好像盖房子总得先盖地基一样，而 mirai-api-http 又基于 mirai-console （一般用户方便理解可以直接看作 mirai 本体），mirai 就像地基填的混凝土，而 mah 则是钢筋。所以我们先来进行混凝土的制作，也就是 mirai 的部署。</p>
 <p>  部署 mirai 对于一般用户来说就是部署 mirai-console，mirai-console 有个启动器叫做 Mirai Console Loader 简称 MCL（下称可能为 mcl），而 MCL 又有个安装器叫做 MCL Installer（下称 MCLI 或 mcli），所以我们现在先去下载 MCL Installer。</p>
@@ -369,7 +370,7 @@
 <p>  ②将链接发送至手机，在 QQ 中打开此链接（登录此账号）进行验证。（你可以用将链接发给你自己等方式在 QQ 中打开链接）</p>
 <p>  在通过设备锁之后， MCL 的配置就完成了，你已经制作好了混凝土，接下来要浇灌地基了，我们接着来安装 MAH。</p>
 <h3 id="4-安装-mirai-api-http"><a href="#4-安装-mirai-api-http" class="headerlink" title="4. 安装 mirai-api-http"></a>4. 安装 mirai-api-http</h3><p>  安装 mirai-api-http 有两种方式，一种是使用 MCL 安装，另一种是手动安装，笔者使用的是手动安装，因为手动安装通常会更稳定，不会被 MCL 更新，毕竟生产环境求稳为上。</p>
-<h4 id="I-使用-MCL-安装"><a href="#I-使用-MCL-安装" class="headerlink" title="I. 使用 MCL 安装"></a>I. 使用 MCL 安装</h4><p>  这十分的简单。</p>
+<h4 id="I-使用-MCL-安装"><a href="#I-使用-MCL-安装" class="headerlink" title="I. 使用 MCL 安装"></a>I. 使用 MCL 安装</h4><p>  这十分地简单。</p>
 <p>  Win + R 输入 cmd 回车打开命令提示符，切换到 MCL 安装目录，输入：</p>
   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">mcl --update-package net.mamoe:mirai-api-http --channel stable-v2 --type plugin<br>mcl -u<br></code></pre></td></tr></table></figure>
 
@@ -391,8 +392,11 @@
   <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment">## 启用的 adapter, 内置有 http, ws, reverse-ws, webhook</span><br><span class="hljs-attr">adapters:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">http</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">ws</span><br><br><span class="hljs-comment">## 是否开启认证流程, 若为 true 则建立连接时需要验证 verifyKey</span><br><span class="hljs-comment">## 建议公网连接时开启</span><br><span class="hljs-attr">enableVerify:</span> <span class="hljs-literal">true</span><br><span class="hljs-attr">verifyKey:</span> <span class="hljs-number">1234567890</span><br><br><span class="hljs-comment">## 开启一些调式信息</span><br><span class="hljs-attr">debug:</span> <span class="hljs-literal">false</span><br><br><span class="hljs-comment">## 是否开启单 session 模式, 若为 true，则自动创建 session 绑定 console 中登录的 bot</span><br><span class="hljs-comment">## 开启后，接口中任何 sessionKey 不需要传递参数</span><br><span class="hljs-comment">## 若 console 中有多个 bot 登录，则行为未定义</span><br><span class="hljs-comment">## 确保 console 中只有一个 bot 登陆时启用</span><br><span class="hljs-attr">singleMode:</span> <span class="hljs-literal">false</span><br><br><span class="hljs-comment">## 历史消息的缓存大小</span><br><span class="hljs-comment">## 同时，也是 http adapter 的消息队列容量</span><br><span class="hljs-attr">cacheSize:</span> <span class="hljs-number">4096</span><br><br><span class="hljs-comment">## adapter 的单独配置，键名与 adapters 项配置相同</span><br><span class="hljs-attr">adapterSettings:</span><br>  <span class="hljs-comment">## 详情看 http adapter 使用说明 配置</span><br>  <span class="hljs-attr">http:</span><br>    <span class="hljs-attr">host:</span> <span class="hljs-string">localhost</span><br>    <span class="hljs-attr">port:</span> <span class="hljs-number">8080</span><br>    <span class="hljs-attr">cors:</span> [<span class="hljs-string">&quot;*&quot;</span>]<br>    <span class="hljs-attr">unreadQueueMaxSize:</span> <span class="hljs-number">100</span><br>  <br>  <span class="hljs-comment">## 详情看 websocket adapter 使用说明 配置</span><br>  <span class="hljs-attr">ws:</span><br>    <span class="hljs-attr">host:</span> <span class="hljs-string">localhost</span><br>    <span class="hljs-attr">port:</span> <span class="hljs-number">8060</span><br>    <span class="hljs-attr">reservedSyncId:</span> <span class="hljs-number">-1</span><br></code></pre></td></tr></table></figure>
 
 <p>  好了，现在你已经打好了地基，可以在上面建房子了。接下来我们进行 Amiya-Bot 的部署。</p>
-<h3 id="6-部署-Amiya-Bot"><a href="#6-部署-Amiya-Bot" class="headerlink" title="6. 部署 Amiya-Bot"></a>6. 部署 Amiya-Bot</h3><p>  折腾了这么久，总算是轮到部署 Amiya-Bot 了！但是……Amiya-Bot 有完备的文档，直接查阅 <a target="_blank" rel="noopener" href="https://www.amiya.cn/docs/deployByCode.html">项目官网</a> 即可。</p>
-<p>  笔者十分推荐你使用代码部署而不是 exe，因为代码会比打包好的 exe 灵活得多（虽然这会需要你配置 Python 环境）。</p>
+<h3 id="6-部署-Amiya-Bot"><a href="#6-部署-Amiya-Bot" class="headerlink" title="6. 部署 Amiya-Bot"></a>6. 部署 Amiya-Bot</h3><p>  折腾了这么久，总算是轮到部署 Amiya-Bot 了！但是……Amiya-Bot 有完备的文档，直接查阅项目官网即可。</p>
+<p>  <a target="_blank" rel="noopener" href="https://www.amiyabot.com/guide/deploy/getStarted.html">v6请看这里（推荐！）</a></p>
+<p>  <a target="_blank" rel="noopener" href="https://www.amiya.cn/docs/deployByCode.html">v5请看这里</a></p>
+<p>  敬请留意：不久后我们可能会彻底停止 v5 版本的维护，届时 v5 版本的官网可能会更改为现在 AmiyaBot 框架官网的镜像。</p>
+<p>  笔者十分推荐你使用代码部署而不是 exe (Windows 可执行文件) 部署，因为代码会比打包好的 exe 灵活得多（虽然这会需要你配置 Python 环境）。</p>
 <p>  就这样。</p>
 <p>  本文开头已经说了：</p>
 <blockquote>
@@ -408,13 +412,14 @@
 
 <p>  在部署过程中遇到其他问题可以加入项目的官方频道或者发电邮到 <code>support@amiya.cn</code>。</p>
 <h3 id="7-高级使用与二次开发"><a href="#7-高级使用与二次开发" class="headerlink" title="7. 高级使用与二次开发"></a>7. 高级使用与二次开发</h3><h4 id="I-高级使用"><a href="#I-高级使用" class="headerlink" title="I. 高级使用"></a>I. 高级使用</h4><h5 id="1-数据库"><a href="#1-数据库" class="headerlink" title="1. 数据库"></a>1. 数据库</h5><p>  如果你的用户很多，默认的 <code>Sqlite</code> 无法满足你的需求，你还可以使用 <code>Mysql</code>。</p>
-<p>  在 <code>config\private\database.yaml</code> 中可以配置使用的数据库，如果想使用 <code>Mysql</code>，请按下面的配置说明进行配置：</p>
+<h6 id="v5"><a href="#v5" class="headerlink" title="v5"></a>v5</h6><p>  在 <code>config\private\database.yaml</code> 中可以配置使用的数据库，如果想使用 <code>Mysql</code>，请按下面的配置说明进行配置：</p>
   <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">mysql:</span><br>    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">config:</span><br>        <span class="hljs-attr">host:</span> <span class="hljs-string">数据库地址</span><br>        <span class="hljs-attr">port:</span> <span class="hljs-string">数据库端口</span><br>        <span class="hljs-attr">user:</span> <span class="hljs-string">登录用户名</span><br>        <span class="hljs-attr">password:</span> <span class="hljs-string">登录密码</span><br>    <span class="hljs-attr">databases:</span><br>        <span class="hljs-attr">bot:</span> <span class="hljs-string">amiya_bot</span><br>        <span class="hljs-attr">group:</span> <span class="hljs-string">amiya_group</span><br>        <span class="hljs-attr">message:</span> <span class="hljs-string">amiya_message</span><br>        <span class="hljs-attr">user:</span> <span class="hljs-string">amiya_user</span><br><br><span class="hljs-attr">sqlite:</span><br>    <span class="hljs-attr">bot:</span> <span class="hljs-string">database/bot.db</span><br>    <span class="hljs-attr">group:</span> <span class="hljs-string">database/group.db</span><br>    <span class="hljs-attr">message:</span> <span class="hljs-string">database/message.db</span><br>    <span class="hljs-attr">user:</span> <span class="hljs-string">database/user.db</span><br></code></pre></td></tr></table></figure>
 
 <p>  需要在 <code>Mysql</code> 中新建四个库，库名可以自己设定，填在上方的 <code>databases</code> 中，当然推荐是使用配置默认的这四个名称。</p>
 <p>  在 <code>Mysql</code> 启用时，<code>Sqlite</code> 的配置会被忽略，也不会使用它。</p>
-<h5 id="2-添加表情"><a href="#2-添加表情" class="headerlink" title="2. 添加表情"></a>2. 添加表情</h5><p>  不知道你是否注意到了，当你发送 <code>兔兔</code> 这类呼叫而不触发任何功能语句时，Amiya 会随机回复一些表情包。这些表情包同样是可以自由增减的。</p>
-<p>  将想要添加的图片放入 <code>resource\images\face</code> 中即可，支持 <code>GIF</code>。</p>
+<h6 id="v6"><a href="#v6" class="headerlink" title="v6"></a>v6</h6><p>  请参阅 <a target="_blank" rel="noopener" href="https://www.amiyabot.com/guide/deploy/advanced/mysql.html">项目文档</a></p>
+<h5 id="2-添加表情"><a href="#2-添加表情" class="headerlink" title="2. 添加表情"></a>2. 添加表情</h5><p>  不知道你是否注意到了，当你发送 <code>兔兔</code> 这类呼叫而不触发任何功能的语句时，Amiya 会随机回复一些表情包。这些表情包同样是可以自由增减的。</p>
+<h6 id="v5-amp-v6"><a href="#v5-amp-v6" class="headerlink" title="v5&amp;v6"></a>v5&amp;v6</h6><p>  将想要添加的图片放入 <code>resource\images\face</code> 中即可，支持 <code>GIF</code>。</p>
 <h5 id="3-手动获取验证码-ticket"><a href="#3-手动获取验证码-ticket" class="headerlink" title="3.手动获取验证码 ticket"></a>3.手动获取验证码 ticket</h5><p>  有时候可能你不方便或者懒得使用手机通过验证码，你还可以使用电脑手动获得 ticket。</p>
 <blockquote>
 <p>为什么初次部署要求你一定要有手机？因为随后还有设备锁等着你。</p>
@@ -425,7 +430,9 @@
 <p>  <img src="//initialheart.oss.aunly.cn/img/p2/img_9.png" srcset="/img/loading.gif" lazyload alt="在通过多个验证码之后找到最新的 cap_union_new_verify"></p>
 <p>  <img src="//initialheart.oss.aunly.cn/img/p2/img_10.png" srcset="/img/loading.gif" lazyload alt="获得 ticket"></p>
 <h4 id="II-二次开发"><a href="#II-二次开发" class="headerlink" title="II.二次开发"></a>II.二次开发</h4><p>  在本文的开头说到，你完全可以将 Amiya-Bot 当作机器人框架来使用。</p>
-<p>  如果你有 Python 基础，又想开发属于自己的个性化功能，你可以查阅项目的 <a target="_blank" rel="noopener" href="https://www.amiya.cn/docs/develop/develop.html">开发文档</a>。</p>
+<p>  如果你有 Python 基础，又想开发属于自己的个性化功能，你可以查阅项目的开发文档。</p>
+<p>  <a target="_blank" rel="noopener" href="https://www.amiyabot.com/develop/basic/">v6 开发文档（推荐！）</a></p>
+<p>  <a target="_blank" rel="noopener" href="https://www.amiya.cn/docs/develop/develop.html">v5 开发文档（警告：可能即将弃用！）</a></p>
 <p>  Enjoy！</p>
 
                 
