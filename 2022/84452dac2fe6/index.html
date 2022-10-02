@@ -18,12 +18,12 @@
   <meta name="author" content="Initial heart">
   <meta name="keywords" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
   
-    <meta name="description" content="在信息安全形势愈发严峻的当下，通过传统的超文本传输协议（HTTP）传输的数据在代理提供者或发动中间人攻击的不法分子眼中如同裸奔。因此，使用合适的措施加密用户与服务器之间的通信是十分之重要的。本文介绍通过 Nginx 快速的将传统 HTTP 协议升级为 HTTPS（超文本传输安全）协议的方法和要点。 一、概述在本文开头，我们提到，通过 HTTP 传输的数据十分的不安全，在一般数据的传输中，这尚无大碍">
+    <meta name="description" content="在信息安全形势愈发严峻的当下，通过传统的超文本传输协议（HTTP）传输的数据在代理提供者或发动攻击的不法分子眼中如同裸奔。因此，使用合适的措施加密用户与服务器之间的通信是十分之重要的。本文介绍通过 Nginx 快速的将传统超文本传输协议升级为超文本传输安全（HTTPS）协议的方法和要点。 一、概述在本文开头，我们提到，通过 HTTP 传输的数据十分的不安全，在一般数据的传输中，这尚无大碍，但在涉及">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx 反向代理加密连接（HTTPS）简明教程">
 <meta property="og:url" content="https://www.initbili.top/2022/84452dac2fe6/">
 <meta property="og:site_name" content="Initial_heart&#39;s Blog">
-<meta property="og:description" content="在信息安全形势愈发严峻的当下，通过传统的超文本传输协议（HTTP）传输的数据在代理提供者或发动中间人攻击的不法分子眼中如同裸奔。因此，使用合适的措施加密用户与服务器之间的通信是十分之重要的。本文介绍通过 Nginx 快速的将传统 HTTP 协议升级为 HTTPS（超文本传输安全）协议的方法和要点。 一、概述在本文开头，我们提到，通过 HTTP 传输的数据十分的不安全，在一般数据的传输中，这尚无大碍">
+<meta property="og:description" content="在信息安全形势愈发严峻的当下，通过传统的超文本传输协议（HTTP）传输的数据在代理提供者或发动攻击的不法分子眼中如同裸奔。因此，使用合适的措施加密用户与服务器之间的通信是十分之重要的。本文介绍通过 Nginx 快速的将传统超文本传输协议升级为超文本传输安全（HTTPS）协议的方法和要点。 一、概述在本文开头，我们提到，通过 HTTP 传输的数据十分的不安全，在一般数据的传输中，这尚无大碍，但在涉及">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p3/img.png">
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p3/img_1.png">
@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p3/img_11.png">
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p3/img_12.png">
 <meta property="article:published_time" content="2022-09-30T07:47:22.000Z">
-<meta property="article:modified_time" content="2022-09-30T14:06:40.582Z">
+<meta property="article:modified_time" content="2022-10-02T03:36:02.626Z">
 <meta property="article:author" content="Initial heart">
 <meta property="article:tag" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
 <meta name="twitter:card" content="summary_large_image">
@@ -87,7 +87,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"www.initbili.top","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":3},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"www.initbili.top","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":55,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":50}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":3},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -167,18 +167,6 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
@@ -237,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.9k 字
+          8.2k 字
         
       </span>
     
@@ -248,12 +236,20 @@
         
         
         
-          40 分钟
+          42 分钟
         
       </span>
     
 
     
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
     
   </div>
 
@@ -291,7 +287,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年9月30日 晚上
+                    本文最后更新于：2022年10月2日 中午
                   
                 
               </p>
@@ -299,14 +295,13 @@
             
               <div class="markdown-body">
                 
-                <p>在信息安全形势愈发严峻的当下，通过传统的超文本传输协议（HTTP）传输的数据在代理提供者或发动中间人攻击的不法分子眼中如同裸奔。因此，使用合适的措施加密用户与服务器之间的通信是十分之重要的。本文介绍通过 Nginx 快速的将传统 HTTP 协议升级为 HTTPS（超文本传输安全）协议的方法和要点。</p>
+                <p>在信息安全形势愈发严峻的当下，通过传统的超文本传输协议（HTTP）传输的数据在代理提供者或发动攻击的不法分子眼中如同裸奔。因此，使用合适的措施加密用户与服务器之间的通信是十分之重要的。本文介绍通过 Nginx 快速的将传统超文本传输协议升级为超文本传输安全（HTTPS）协议的方法和要点。</p>
 <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>在本文开头，我们提到，通过 HTTP 传输的数据十分的不安全，在一般数据的传输中，这尚无大碍，但在涉及到用户的重要数据（如账号密码或隐私数据）时，这是十分危险的，所以我们需要通过对连接进行加密来保障信息在传输过程中的安全。</p>
-<p>那么，什么是 HTTP，为什么它不安全，HTTPS 又是什么？</p>
-<h2 id="1-HTTPS-是什么？"><a href="#1-HTTPS-是什么？" class="headerlink" title="1.HTTPS 是什么？"></a>1.HTTPS 是什么？</h2><p>关于这一部分的内容，尽管我很想用我自己的话来展开讲以求能让你更好地理解它们，但菜鸟教程已有对这些问题的讲解，且大多足够详细易懂，所以如果你感兴趣，请参阅以下链接：</p>
+<p>那么，什么是 HTTP，HTTPS 又是什么，为什么 HTTP 不安全？</p>
+<h2 id="1-HTTP-S-是什么？"><a href="#1-HTTP-S-是什么？" class="headerlink" title="1.HTTP(S) 是什么？"></a>1.HTTP(S) 是什么？</h2><p>关于这一部分的内容，尽管我很想用我自己的话来展开讲以求能让你更好地理解它们，但菜鸟教程已有对这些问题的讲解，且大多足够详细易懂，所以如果你感兴趣，请参阅以下链接：</p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/http/http-intro.html">https://www.runoob.com/http/http-intro.html</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/http-vs-https.html">https://www.runoob.com/w3cnote/http-vs-https.html</a></p>
-<h2 id="2-为什么-HTTP-不安全？"><a href="#2-为什么-HTTP-不安全？" class="headerlink" title="2.为什么 HTTP 不安全？"></a>2.为什么 HTTP 不安全？</h2><p>补充讲解一下为什么 HTTP 不安全：</p>
-<p>首先，这是一般情况下正常的 HTTP 通讯简图：</p>
+<h2 id="2-为什么-HTTP-不安全？"><a href="#2-为什么-HTTP-不安全？" class="headerlink" title="2.为什么 HTTP 不安全？"></a>2.为什么 HTTP 不安全？</h2><p>首先，这是一般情况下正常的 HTTP 通讯简图：</p>
 <p><img src="//initialheart.oss.aunly.cn/img/p3/img.png" srcset="/img/loading.gif" lazyload alt="正常的 HTTP 通讯"></p>
 <p>但是，如果你的域名服务器（DNS）不可信或被污染又或是其他情况例如代理提供商篡改了返回并抢先一步将篡改的返回包送达用户等实际上让访问得到的内容不是或不完全是域名所有者期望用户看到的内容的情况，我们将其称为劫持。</p>
 <p>其中，由于域名服务器出现问题造成用户实际访问的服务器不是域名所有者所期望用户访问的服务器的情况，称作 DNS 劫持。</p>
@@ -315,6 +310,7 @@
 <p>对于 HTTP 劫持，HTTPS 可以有效地解决这个问题。</p>
 <p>这到底有多么重要呢？举个例子。你正在使用的网上银行网站使用 HTTP 而不是安全的 HTTPS，这个时候隔壁的张三恰巧知道你使用的网上银行网站不安全，便动起了歪心思，打开光纤箱把你家的光纤拉到了他的特制设备上，再由特制设备接着走正常的传输过程。这时你打开网上银行，张三马上收到了消息，当你在转账时，张三把对方的账号篡改为了自己的账号，并把转账金额篡改为余额，得手后立刻逃到了致远星。现在你只能看着余额页面大大的 0 抱头痛哭了。</p>
 <p><img src="//initialheart.oss.aunly.cn/img/p3/img_1.png" srcset="/img/loading.gif" lazyload alt="被劫持的通讯"></p>
+<p>张三甚至还可以做得更隐蔽些：因为 HTTP 通过明文传输数据，所以可以通过监听知道你的密码，等你睡着了张三再与银行通讯刷走你的钱然后跑路。</p>
 <p>事实上，类似这样的劫持可以在信息传输的任意阶段发生，在信息送达之前，你的信息只有天知道安不安全。</p>
 <p>当然，不用担心这个例子真的在现实中发生，因为网银在传输这些信息时是 100% 使用 HTTPS 的，而且银行也采用了很多其他手段保护你的交易。但是这足以说明 HTTP 的不安全。</p>
 <p>好了，我们进入正题。接下来我们讲解反向代理。</p>
@@ -340,8 +336,8 @@
 </blockquote>
 <p>而通过反向代理，我们把可能可以有效劫持的区域缩小到了一个机房，甚至是一台机器内部。显然的，你要是连机房都看不好你搞个屁安全？人都进到你机房了还用劫持？所以这样便有效地保证了信息在传输过程中的安全。</p>
 <p>现在我们知道了反向代理是什么，它如何保障我们的信息安全。接下来我们来实践一下，搭建一个反向代理来加密连接。</p>
-<h1 id="三、Nginx-的搭建"><a href="#三、Nginx-的搭建" class="headerlink" title="三、Nginx 的搭建"></a>三、Nginx 的搭建</h1><p>要使用反向代理来加密连接，首先我们显然需要先搭建反向代理服务器。反向代理服务器有很多，本文主要说明 Nginx 的使用。</p>
-<p>笔者在 Windows 环境下编写本文，如果你使用其它系统，推荐你自行搜索这部分的内容，网络上已经有很多足够简明的教程且你使用的系统并不影响接下来介绍的大多数操作。</p>
+<h1 id="三、Nginx-的配置"><a href="#三、Nginx-的配置" class="headerlink" title="三、Nginx 的配置"></a>三、Nginx 的配置</h1><p>要使用反向代理来加密连接，我们显然需要先搭建反向代理服务器。反向代理服务器有很多，本文主要说明 Nginx 的使用。</p>
+<h2 id="1-搭建-Nginx-环境"><a href="#1-搭建-Nginx-环境" class="headerlink" title="1.搭建 Nginx 环境"></a>1.搭建 Nginx 环境</h2><p>笔者在 Windows 环境下编写本文，如果你使用其它系统，推荐你自行搜索这部分的内容，网络上已经有很多足够简明的教程且你使用的系统并不影响接下来介绍的大多数操作。</p>
 <p>首先，访问 Nginx 官网的 <a target="_blank" rel="noopener" href="https://nginx.org/en/download.html">下载页面</a>：</p>
 <p>下载 <code>Stable version</code> 下的版本。</p>
 <p><img src="//initialheart.oss.aunly.cn/img/p3/img_5.png" srcset="/img/loading.gif" lazyload alt="Nginx 官网下载页面"></p>
@@ -352,10 +348,11 @@
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">nginx<br>├─ conf<br>│    └─ nginx.conf<br>└─ nginx.exe<br></code></pre></td></tr></table></figure>
 
 <p>不在简化的目录结构中的文件，你不用理会，也最好别动。</p>
-<p>现在，我们打开 <code>conf\nginx.conf</code>，你会看到以下内容：</p>
+<p>记住你解压 Nginx 的目录，现在你就搭建好了 Nginx 环境。没错！就是这么简单，开箱即用！</p>
+<h2 id="2-配置-Nginx"><a href="#2-配置-Nginx" class="headerlink" title="2.配置 Nginx"></a>2.配置 Nginx</h2><p>现在，我们打开 <code>conf\nginx.conf</code>，你会看到以下内容：</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-comment">#user  nobody;</span><br><span class="hljs-attribute">worker_processes</span>  <span class="hljs-number">1</span>;<br><br><span class="hljs-comment">#error_log  logs/error.log;</span><br><span class="hljs-comment">#error_log  logs/error.log  notice;</span><br><span class="hljs-comment">#error_log  logs/error.log  info;</span><br><br><span class="hljs-comment">#pid        logs/nginx.pid;</span><br><br><br><span class="hljs-section">events</span> &#123;<br>    <span class="hljs-attribute">worker_connections</span>  <span class="hljs-number">1024</span>;<br>&#125;<br><br><br><span class="hljs-section">http</span> &#123;<br>    <span class="hljs-attribute">include</span>       mime.types;<br>    <span class="hljs-attribute">default_type</span>  application/octet-stream;<br><br>    <span class="hljs-comment">#log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br>    <span class="hljs-comment">#                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br>    <span class="hljs-comment">#                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><br>    <span class="hljs-comment">#access_log  logs/access.log  main;</span><br><br>    <span class="hljs-attribute">sendfile</span>        <span class="hljs-literal">on</span>;<br>    <span class="hljs-comment">#tcp_nopush     on;</span><br><br>    <span class="hljs-comment">#keepalive_timeout  0;</span><br>    <span class="hljs-attribute">keepalive_timeout</span>  <span class="hljs-number">65</span>;<br><br>    <span class="hljs-comment">#gzip  on;</span><br><br>    <span class="hljs-section">server</span> &#123;<br>        <span class="hljs-attribute">listen</span>       <span class="hljs-number">80</span>;<br>        <span class="hljs-attribute">server_name</span>  localhost;<br><br>        <span class="hljs-comment">#charset koi8-r;</span><br><br>        <span class="hljs-comment">#access_log  logs/host.access.log  main;</span><br><br>        <span class="hljs-section">location</span> / &#123;<br>            <span class="hljs-attribute">root</span>   html;<br>            <span class="hljs-attribute">index</span>  index.html index.htm;<br>        &#125;<br><br>        <span class="hljs-comment">#error_page  404              /404.html;</span><br><br>        <span class="hljs-comment"># redirect server error pages to the static page /50x.html</span><br>        <span class="hljs-comment">#</span><br>        <span class="hljs-attribute">error_page</span>   <span class="hljs-number">500</span> <span class="hljs-number">502</span> <span class="hljs-number">503</span> <span class="hljs-number">504</span>  /50x.html;<br>        <span class="hljs-section">location</span> = /50x.html &#123;<br>            <span class="hljs-attribute">root</span>   html;<br>        &#125;<br><br>        <span class="hljs-comment"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span><br>        <span class="hljs-comment">#</span><br>        <span class="hljs-comment">#location ~ \.php$ &#123;</span><br>        <span class="hljs-comment">#    proxy_pass   http://127.0.0.1;</span><br>        <span class="hljs-comment">#&#125;</span><br><br>        <span class="hljs-comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span><br>        <span class="hljs-comment">#</span><br>        <span class="hljs-comment">#location ~ \.php$ &#123;</span><br>        <span class="hljs-comment">#    root           html;</span><br>        <span class="hljs-comment">#    fastcgi_pass   127.0.0.1:9000;</span><br>        <span class="hljs-comment">#    fastcgi_index  index.php;</span><br>        <span class="hljs-comment">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br>        <span class="hljs-comment">#    include        fastcgi_params;</span><br>        <span class="hljs-comment">#&#125;</span><br><br>        <span class="hljs-comment"># deny access to .htaccess files, if Apache&#x27;s document root</span><br>        <span class="hljs-comment"># concurs with nginx&#x27;s one</span><br>        <span class="hljs-comment">#</span><br>        <span class="hljs-comment">#location ~ /\.ht &#123;</span><br>        <span class="hljs-comment">#    deny  all;</span><br>        <span class="hljs-comment">#&#125;</span><br>    &#125;<br><br><br>    <span class="hljs-comment"># another virtual host using mix of IP-, name-, and port-based configuration</span><br>    <span class="hljs-comment">#</span><br>    <span class="hljs-comment">#server &#123;</span><br>    <span class="hljs-comment">#    listen       8000;</span><br>    <span class="hljs-comment">#    listen       somename:8080;</span><br>    <span class="hljs-comment">#    server_name  somename  alias  another.alias;</span><br><br>    <span class="hljs-comment">#    location / &#123;</span><br>    <span class="hljs-comment">#        root   html;</span><br>    <span class="hljs-comment">#        index  index.html index.htm;</span><br>    <span class="hljs-comment">#    &#125;</span><br>    <span class="hljs-comment">#&#125;</span><br><br><br>    <span class="hljs-comment"># HTTPS server</span><br>    <span class="hljs-comment">#</span><br>    <span class="hljs-comment">#server &#123;</span><br>    <span class="hljs-comment">#    listen       443 ssl;</span><br>    <span class="hljs-comment">#    server_name  localhost;</span><br><br>    <span class="hljs-comment">#    ssl_certificate      cert.pem;</span><br>    <span class="hljs-comment">#    ssl_certificate_key  cert.key;</span><br><br>    <span class="hljs-comment">#    ssl_session_cache    shared:SSL:1m;</span><br>    <span class="hljs-comment">#    ssl_session_timeout  5m;</span><br><br>    <span class="hljs-comment">#    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br>    <span class="hljs-comment">#    ssl_prefer_server_ciphers  on;</span><br><br>    <span class="hljs-comment">#    location / &#123;</span><br>    <span class="hljs-comment">#        root   html;</span><br>    <span class="hljs-comment">#        index  index.html index.htm;</span><br>    <span class="hljs-comment">#    &#125;</span><br>    <span class="hljs-comment">#&#125;</span><br><br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>我建议你复制下面这个推荐配置：</p>
+<p>复制下面这个推荐配置，替换掉里面的内容：</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><br><span class="hljs-attribute">worker_processes</span>  <span class="hljs-number">1</span>;<br><br><span class="hljs-section">events</span> &#123;<br>    <span class="hljs-attribute">worker_connections</span>  <span class="hljs-number">1024</span>;<br>&#125;<br><br><span class="hljs-section">http</span> &#123;<br>    <span class="hljs-attribute">include</span>       mime.types;<br>    <span class="hljs-attribute">default_type</span>  application/octet-stream;<br><br>    <span class="hljs-attribute">log_format</span>  main  <span class="hljs-string">&#x27;<span class="hljs-variable">$remote_addr</span> - <span class="hljs-variable">$remote_user</span> [<span class="hljs-variable">$time_local</span>] &quot;<span class="hljs-variable">$request</span>&quot; &#x27;</span><br>                      <span class="hljs-string">&#x27;<span class="hljs-variable">$status</span> <span class="hljs-variable">$body_bytes_sent</span> &quot;<span class="hljs-variable">$http_referer</span>&quot; &#x27;</span><br>                      <span class="hljs-string">&#x27;&quot;<span class="hljs-variable">$http_user_agent</span>&quot; &quot;<span class="hljs-variable">$http_x_forwarded_for</span>&quot;&#x27;</span>;<br><br>    <span class="hljs-attribute">access_log</span>  logs/access.log  main;<br><br>    <span class="hljs-attribute">sendfile</span>        <span class="hljs-literal">on</span>;<br><br>    <span class="hljs-attribute">keepalive_timeout</span>  <span class="hljs-number">65</span>;<br><br>    <span class="hljs-attribute">gzip</span>  <span class="hljs-literal">on</span>;<br><br>    <span class="hljs-comment">#server &#123;</span><br>    <span class="hljs-comment">#    listen       443 ssl;</span><br>    <span class="hljs-comment">#    server_name  localhost;</span><br><br>    <span class="hljs-comment">#    ssl_certificate      cert.pem;</span><br>    <span class="hljs-comment">#    ssl_certificate_key  cert.key;</span><br><br>    <span class="hljs-comment">#    ssl_session_cache    shared:SSL:1m;</span><br>    <span class="hljs-comment">#    ssl_session_timeout  5m;</span><br><br>    <span class="hljs-comment">#    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br>    <span class="hljs-comment">#    ssl_prefer_server_ciphers  on;</span><br><br>    <span class="hljs-comment">#    location / &#123;</span><br>    <span class="hljs-comment">#        root   html;</span><br>    <span class="hljs-comment">#        index  index.html index.htm;</span><br>    <span class="hljs-comment">#    &#125;</span><br>    <span class="hljs-comment">#&#125;</span><br><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>现在，我们完成了 Nginx 的配置，是时候开始加密我们的连接了。</p>
@@ -366,7 +363,7 @@
 <li>通常无法获得免费的泛域名证书。</li>
 </ol>
 <blockquote>
-<p>泛域名是什么？eg: *.example.com</p>
+<p>泛域名是什么？e.g.,*.example.com</p>
 </blockquote>
 <p>这意味着你必须给每个需要使用 HTTPS 的子域申请签发证书。当然，一般情况下，这并不是非常麻烦。</p>
 <ol start="2">
@@ -388,13 +385,15 @@
 <p>当腾讯云通知你审核通过时，回到 <code>我的证书</code> 页面，就可以看到申请的 SSL 证书了。</p>
 <p><img src="//initialheart.oss.aunly.cn/img/p3/img_10.png" srcset="/img/loading.gif" lazyload alt="审核通过后的 SSL 证书"></p>
 <p>单击图中框出的 <code>下载</code>，在弹出的页面中下载 <code>Nginx</code> 版本的证书。</p>
-<p>记住，保管好你下载的证书文件，千万不要让私钥（<code>example.com.key</code>）泄露，否则你就只能吊销这个证书了。</p>
+<p>记住，保管好你下载的证书文件，千万不要让私钥（e.g. <code>example.com.key</code>）泄露，否则你就只能吊销这个证书了。</p>
 <p>现在你就获得了一个由 CA 签发的 SSL 证书。</p>
 <h2 id="2-自签名的-SSL-证书"><a href="#2-自签名的-SSL-证书" class="headerlink" title="2.自签名的 SSL 证书"></a>2.自签名的 SSL 证书</h2><p>你还可以自己充当 CA，自己给自己签发 SSL 证书。这虽然可以加密传输的信息，但却不能完全阻止中间人攻击。</p>
 <p>为什么呢？因为你的用户不知道你是不是你。自签名的 SSL 证书很难对服务器的身份进行验证，也就是说可能出现这样的情况： </p>
 <p><img src="//initialheart.oss.aunly.cn/img/p3/img_11.png" srcset="/img/loading.gif" lazyload alt="自签名证书被中间人攻击"></p>
+<p>换句话说，你能签发证书那不法分子一样能签发证书，用户怎么知道证书是不是你签发的？</p>
 <p>但如果你使用的是 CA 签名的证书，就可能出现这样的情况：</p>
 <p><img src="//initialheart.oss.aunly.cn/img/p3/img_12.png" srcset="/img/loading.gif" lazyload alt="CA 证书被中间人攻击"></p>
+<p>CA 签发的证书因为存在证书链，而可信 CA 的根证书预装在了每台设备中，即意味着这个证书的签发被 CA 认可，而 CA 认可身份并签发证书需要严格的审核，这就保障了这个证书就是你本人申请的证书，而使用者默认是你本人。这也是为什么你必须保管好你的私钥，私钥一旦泄露，CA 签发的证书也就失去了验证“你是你”的作用。</p>
 <p>所以笔者不推荐使用自签名证书，如果你想了解相关信息，可以使用搜索引擎查询。</p>
 <h1 id="五、使用-SSL-证书对连接进行加密"><a href="#五、使用-SSL-证书对连接进行加密" class="headerlink" title="五、使用 SSL 证书对连接进行加密"></a>五、使用 SSL 证书对连接进行加密</h1><p>不管通过哪种方式取得了 SSL 证书，拿了证书总是要用的，接下来我们来使用它。</p>
 <p>假设你从腾讯云申请证书，证书已经解压到 <code>conf\ssl</code>。</p>
@@ -411,6 +410,7 @@
 
 <p>它的作用是将网页中所有的 HTTP 内容自动升级为 HTTPS 内容，这么做的原因是在 HTTPS 连接中不允许再通过 HTTP 传输数据。</p>
 <p>一定要记得对齐缩进！</p>
+<p>现在，打开 <code>nginx.exe</code>，启动 Nginx。</p>
 <p>现在你就成功的使用 Nginx 反向代理加密了你的连接。</p>
 <p>Enjoy!</p>
 
@@ -420,6 +420,34 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%8A%80%E6%9C%AF/%E6%95%99%E7%A8%8B/" class="category-chain-item">教程</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
 </div>
@@ -482,6 +510,34 @@
             </div>
 
             
+  <article id="comments" lazyload>
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.7/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo.1314.cool:443","region":null,"path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
           </article>
         </div>
       </div>
@@ -611,7 +667,7 @@
   <link  rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.configure({"showSpinner":false,"trickleSpeed":50})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();

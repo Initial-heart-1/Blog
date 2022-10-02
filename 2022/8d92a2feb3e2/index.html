@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p2/img_9.png">
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p2/img_10.png">
 <meta property="article:published_time" content="2022-08-20T16:02:21.000Z">
-<meta property="article:modified_time" content="2022-09-23T12:22:36.214Z">
+<meta property="article:modified_time" content="2022-10-02T14:36:07.785Z">
 <meta property="article:author" content="Initial heart">
 <meta property="article:tag" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
 <meta name="twitter:card" content="summary_large_image">
@@ -85,7 +85,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"www.initbili.top","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":3},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"www.initbili.top","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":55,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":50}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":3},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -165,18 +165,6 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
@@ -235,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.1k 字
+          7.2k 字
         
       </span>
     
@@ -252,6 +240,14 @@
     
 
     
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
     
   </div>
 
@@ -289,7 +285,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年9月23日 晚上
+                    本文最后更新于：2022年10月2日 晚上
                   
                 
               </p>
@@ -304,13 +300,10 @@
 <p>  废话说得太多了，现在开始讲如何部署。</p>
 <p>  在开始之前，需要说明的是，笔者因为自己就被文档坑过，所以为该项目完善了一些文档，下面可能会大量引用（当然，引用的文档不一定是笔者编写的），直接放上相关链接来看，本文只重点讲解文档没有涉及到的部分，比如 mirai 的部署和配置。引用的来自 AmiyaBot 的文档与本文采用相同方式许可。</p>
 <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>  笔者在 Windows 环境下部署并编写本文，所以使用 Linux 的用户可能不能照抄，但是思路是一样的，抄个思路一般也没问题，不过要注意你的系统是否符合项目要求，具体系统要求如下：</p>
-<blockquote>
-<ul>
-<li>仅支持 <strong>Windows 7</strong> 以上系统</li>
-<li>仅支持 <strong>MacOS 10.14 Mojave</strong> 以上系统</li>
-<li>Linux 系统仅支持 <strong>Ubuntu 18.04</strong> 以及 <strong>Ubuntu 20.04</strong></li>
-</ul>
-</blockquote>
+<div class="note note-warning">
+            <ul><li>仅支持 <strong>Windows 7</strong> 以上系统</li><li>仅支持 <strong>MacOS 10.14 Mojave</strong> 以上系统</li><li>Linux 系统仅支持 <strong>Ubuntu 18.04</strong> 以及 <strong>Ubuntu 20.04</strong></li></ul>
+          </div>
+
 <p>  其他的系统部分用户有成功部署的案例，但是显然不完全适用本文，如果你的系统不符合以上要求，你可以参照本文也就是一般部署的思路尝试部署在你的系统，但是可能会遇到一些困难。</p>
 <p>  在初次部署时你必须要有一台可用的手机，而之后若遇到滑动验证码可以选择使用手机通过或查阅下方高级使用部分的电脑通过。</p>
 <p>  在开始正式部署前，我们有必要先了解一下项目的基本情况，否则可能会造成一些困扰。</p>
@@ -379,9 +372,9 @@
 
 <p>  即可安装 MAH 的最新版本。</p>
 <p>  如果你不会切换目录，你可以在安装目录下新建一个 <code>mah.txt</code>，填入上面的命令后保存，将 <code>mah.txt</code> 改为 <code>mah.bat</code>，警告选是，然后双击运行它即可。</p>
-<blockquote>
-<p>没有发现 .txt？那意味着你没有开启已知文件的后缀显示，请百度 <code>Windows 开启后缀显示</code>。</p>
-</blockquote>
+<div class="note note-info">
+            <p>没有发现 .txt？那意味着你没有开启已知文件的后缀显示，请百度 <code>Windows 开启后缀显示</code>。</p>
+          </div>
 <p>  当出现消息 <code>mirai-console started successfully.</code> 时，你可以在 mcl 中输入 <code>exit</code> 或者 <code>stop</code> 来安全退出，一般推荐以此种方式关闭 mcl。</p>
 <h4 id="II-手动安装"><a href="#II-手动安装" class="headerlink" title="II. 手动安装"></a>II. 手动安装</h4><p>  这稍微麻烦一些，但并不难，如果你无法使用第一种方式或者不想用等种种原因，你可以使用手动安装。</p>
 <p>  首先，打开 mah 的 <a target="_blank" rel="noopener" href="https://github.com/project-mirai/mirai-api-http/releases">Release</a>，下载最新的稳定版本，相关操作与上面 MCLI 类似，不再赘述。</p>
@@ -422,11 +415,20 @@
 <p>  在 <code>Mysql</code> 启用时，<code>Sqlite</code> 的配置会被忽略，也不会使用它。</p>
 <h6 id="v6"><a href="#v6" class="headerlink" title="v6"></a>v6</h6><p>  请参阅 <a target="_blank" rel="noopener" href="https://www.amiyabot.com/guide/deploy/advanced/mysql.html">项目文档</a></p>
 <h5 id="2-添加表情"><a href="#2-添加表情" class="headerlink" title="2. 添加表情"></a>2. 添加表情</h5><p>  不知道你是否注意到了，当你发送 <code>兔兔</code> 这类呼叫而不触发任何功能的语句时，Amiya 会随机回复一些表情包。这些表情包同样是可以自由增减的。</p>
-<h6 id="v5-amp-v6"><a href="#v5-amp-v6" class="headerlink" title="v5&amp;v6"></a>v5&amp;v6</h6><p>  将想要添加的图片放入 <code>resource\images\face</code> 中即可，支持 <code>GIF</code>。</p>
+<h6 id="v5-1"><a href="#v5-1" class="headerlink" title="v5"></a>v5</h6><p>  将想要添加的图片放入 <code>resource\images\face</code> 中即可，支持 <code>GIF</code>。</p>
+<h6 id="v6-1"><a href="#v6-1" class="headerlink" title="v6"></a>v6</h6> <div class="note note-warning">
+            <p>请确定你已安装 <span class="label label-info">兔兔互动</span> 插件。</p>
+          </div>
+<p>   将想要添加的图片放入 <code>plugins\amiyabot-user\face</code> 中即可，支持 <code>GIF</code>。</p>
+<div class="note note-warning">
+            <p>上面的路径省略了版本号。</p>
+          </div>
+
 <h5 id="3-手动获取验证码-ticket"><a href="#3-手动获取验证码-ticket" class="headerlink" title="3.手动获取验证码 ticket"></a>3.手动获取验证码 ticket</h5><p>  有时候可能你不方便或者懒得使用手机通过验证码，你还可以使用电脑手动获得 ticket。</p>
-<blockquote>
-<p>为什么初次部署要求你一定要有手机？因为随后还有设备锁等着你。</p>
-</blockquote>
+<div class="note note-info">
+            <p>为什么初次部署要求你一定要有手机？因为随后还有设备锁等着你。</p>
+          </div>
+
 <p>  以 Microsoft Edge 为例，当弹出滑动验证码窗口时，复制验证码链接到浏览器打开，并按 <code>F12</code> 打开开发人员工具，切换到 <code>网络</code> 选项卡（老版本的浏览器可能显示为 <code>Network</code>）。</p>
 <p>  <img src="//initialheart.oss.aunly.cn/img/p2/img_8.png" srcset="/img/loading.gif" lazyload alt="抓包"></p>
 <p>  此时通过滑动验证码，如果页面没有显示空白而是要求你再次通过验证码，再次通过即可；在打开的开发人员工具中找到 <code>cap_union_new_verify</code>，如果你通过了多个验证码则找按时间线升序排列最底下也就是最新的那一个，双击后切换到 <code>响应</code> 选项卡，写着 <code>ticket</code> 的后面引号部分则是 ticket，注意不含前后的引号。</p>
@@ -444,6 +446,34 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%8A%80%E6%9C%AF/%E6%95%99%E7%A8%8B/" class="category-chain-item">教程</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
 </div>
@@ -512,6 +542,34 @@
             </div>
 
             
+  <article id="comments" lazyload>
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.7/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo.1314.cool:443","region":null,"path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
           </article>
         </div>
       </div>
@@ -641,7 +699,7 @@
   <link  rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.configure({"showSpinner":false,"trickleSpeed":50})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
