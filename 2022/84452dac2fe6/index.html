@@ -18,12 +18,12 @@
   <meta name="author" content="Initial heart">
   <meta name="keywords" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
   
-    <meta name="description" content="在信息安全形势愈发严峻的当下，通过传统的超文本传输协议（HTTP）传输的数据在代理提供者或发动攻击的不法分子眼中如同裸奔。因此，使用合适的措施加密用户与服务器之间的通信是十分之重要的。本文介绍通过 Nginx 快速的将传统超文本传输协议升级为超文本传输安全（HTTPS）协议的方法和要点。 一、概述在本文开头，我们提到，通过 HTTP 传输的数据十分的不安全，在一般数据的传输中，这尚无大碍，但在涉及">
+    <meta name="description" content="在信息安全形势愈发严峻的当下，通过传统的超文本传输协议（HTTP）传输的数据在代理提供者或发动攻击的不法分子眼中如同裸奔。因此，使用合适的措施加密用户与服务器之间的通信是十分之重要的。本文介绍通过 Nginx 快速的将传统超文本传输协议升级为超文本传输安全（HTTPS）协议的方法和要点。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx 反向代理加密连接（HTTPS）简明教程">
 <meta property="og:url" content="https://www.initbili.top/2022/84452dac2fe6/">
 <meta property="og:site_name" content="Initial_heart&#39;s Blog">
-<meta property="og:description" content="在信息安全形势愈发严峻的当下，通过传统的超文本传输协议（HTTP）传输的数据在代理提供者或发动攻击的不法分子眼中如同裸奔。因此，使用合适的措施加密用户与服务器之间的通信是十分之重要的。本文介绍通过 Nginx 快速的将传统超文本传输协议升级为超文本传输安全（HTTPS）协议的方法和要点。 一、概述在本文开头，我们提到，通过 HTTP 传输的数据十分的不安全，在一般数据的传输中，这尚无大碍，但在涉及">
+<meta property="og:description" content="在信息安全形势愈发严峻的当下，通过传统的超文本传输协议（HTTP）传输的数据在代理提供者或发动攻击的不法分子眼中如同裸奔。因此，使用合适的措施加密用户与服务器之间的通信是十分之重要的。本文介绍通过 Nginx 快速的将传统超文本传输协议升级为超文本传输安全（HTTPS）协议的方法和要点。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p3/img.png">
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p3/img_1.png">
@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p3/img_11.png">
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p3/img_12.png">
 <meta property="article:published_time" content="2022-09-30T07:47:22.000Z">
-<meta property="article:modified_time" content="2022-10-02T03:36:02.626Z">
+<meta property="article:modified_time" content="2022-10-04T21:23:44.690Z">
 <meta property="article:author" content="Initial heart">
 <meta property="article:tag" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
 <meta name="twitter:card" content="summary_large_image">
@@ -287,7 +287,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年10月2日 中午
+                    本文最后更新于：2022年10月5日 凌晨
                   
                 
               </p>
@@ -296,6 +296,8 @@
               <div class="markdown-body">
                 
                 <p>在信息安全形势愈发严峻的当下，通过传统的超文本传输协议（HTTP）传输的数据在代理提供者或发动攻击的不法分子眼中如同裸奔。因此，使用合适的措施加密用户与服务器之间的通信是十分之重要的。本文介绍通过 Nginx 快速的将传统超文本传输协议升级为超文本传输安全（HTTPS）协议的方法和要点。</p>
+<span id="more"></span>
+
 <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>在本文开头，我们提到，通过 HTTP 传输的数据十分的不安全，在一般数据的传输中，这尚无大碍，但在涉及到用户的重要数据（如账号密码或隐私数据）时，这是十分危险的，所以我们需要通过对连接进行加密来保障信息在传输过程中的安全。</p>
 <p>那么，什么是 HTTP，HTTPS 又是什么，为什么 HTTP 不安全？</p>
 <h2 id="1-HTTP-S-是什么？"><a href="#1-HTTP-S-是什么？" class="headerlink" title="1.HTTP(S) 是什么？"></a>1.HTTP(S) 是什么？</h2><p>关于这一部分的内容，尽管我很想用我自己的话来展开讲以求能让你更好地理解它们，但菜鸟教程已有对这些问题的讲解，且大多足够详细易懂，所以如果你感兴趣，请参阅以下链接：</p>
