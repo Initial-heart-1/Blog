@@ -18,15 +18,15 @@
   <meta name="author" content="Initial heart">
   <meta name="keywords" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
   
-    <meta name="description" content="相信很多站长朋友十分想在自己的网站上实现像萌百那样的黑幕效果（又称刮刮乐），我也一样，故本文来教大家如何实现。 实现将这段 CSS 添加至你的网站： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 &#x2F;* 萌娘百科 “黑幕” *&#x2F; &#x2F;* 以下内容引用自萌娘百科">
+    <meta name="description" content="不知道你是否有用过类似：              这样                          这样                          又或是这样的标签呢？             以上标签写的时候长这样： 1234567891011&amp;#123;% note success %&amp;#125;这样&amp;#123;% endnote %&amp;#125;&amp;#123;% note war">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单、快速地实现萌娘百科黑幕效果">
-<meta property="og:url" content="https://www.initbili.top/2022/dba42bb67415/">
+<meta property="og:title" content="为你的 Hexo 定制标签语法！">
+<meta property="og:url" content="https://www.initbili.top/2022/74cf12f2759b/">
 <meta property="og:site_name" content="Initial_heart&#39;s Blog">
-<meta property="og:description" content="相信很多站长朋友十分想在自己的网站上实现像萌百那样的黑幕效果（又称刮刮乐），我也一样，故本文来教大家如何实现。 实现将这段 CSS 添加至你的网站： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 &#x2F;* 萌娘百科 “黑幕” *&#x2F; &#x2F;* 以下内容引用自萌娘百科">
+<meta property="og:description" content="不知道你是否有用过类似：              这样                          这样                          又或是这样的标签呢？             以上标签写的时候长这样： 1234567891011&amp;#123;% note success %&amp;#125;这样&amp;#123;% endnote %&amp;#125;&amp;#123;% note war">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-02T19:16:21.000Z">
-<meta property="article:modified_time" content="2022-10-03T21:01:14.114Z">
+<meta property="article:published_time" content="2022-10-04T10:17:26.000Z">
+<meta property="article:modified_time" content="2022-10-04T11:05:44.766Z">
 <meta property="article:author" content="Initial heart">
 <meta property="article:tag" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
 <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>简单、快速地实现萌娘百科黑幕效果 - Initial_heart&#39;s Blog</title>
+  <title>为你的 Hexo 定制标签语法！ - Initial_heart&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -188,7 +188,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="简单、快速地实现萌娘百科黑幕效果"></span>
+            <span id="subtitle" data-typed-text="为你的 Hexo 定制标签语法！"></span>
           
         </div>
 
@@ -199,8 +199,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-03 03:16" pubdate>
-          2022年10月3日 凌晨
+        <time datetime="2022-10-04 18:17" pubdate>
+          2022年10月4日 晚上
         </time>
       </span>
     
@@ -211,7 +211,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          923 字
         
       </span>
     
@@ -222,7 +222,7 @@
         
         
         
-          8 分钟
+          5 分钟
         
       </span>
     
@@ -268,12 +268,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">简单、快速地实现萌娘百科黑幕效果</h1>
+            <h1 style="display: none">为你的 Hexo 定制标签语法！</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年10月4日 凌晨
+                    本文最后更新于：2022年10月4日 晚上
                   
                 
               </p>
@@ -281,22 +281,44 @@
             
               <div class="markdown-body">
                 
-                <p>相信很多站长朋友十分想在自己的网站上实现像萌百那样的<span class="heimu" title="你知道的太多了">黑幕效果（又称刮刮乐）</span>，我也一样，故本文来教大家如何实现。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>将这段 CSS 添加至你的网站：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs css"> <span class="hljs-comment">/* 萌娘百科 “黑幕” */</span><br> <span class="hljs-comment">/* 以下内容引用自萌娘百科 https://zh.moegirl.org.cn/MediaWiki:Gadget-site-styles.css，感谢！ */</span><br> <span class="hljs-comment">/* MoeGirl Start */</span><br> <br><span class="hljs-selector-class">.heimu</span>,<br><span class="hljs-selector-class">.heimu</span> <span class="hljs-selector-tag">a</span>,<br><span class="hljs-selector-tag">a</span> <span class="hljs-selector-class">.heimu</span>,<br><span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.new</span> <span class="hljs-selector-class">.heimu</span>,<br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.new</span>,<br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.external</span>,<br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.external</span><span class="hljs-selector-pseudo">:visited</span>,<br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.extiw</span>,<br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.extiw</span><span class="hljs-selector-pseudo">:visited</span>,<br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.mw-disambig</span>,<br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.mw-redirect</span>&#123;<br>    <span class="hljs-attribute">transition</span>:color <span class="hljs-number">0.13s</span> linear;<br>    <span class="hljs-attribute">color</span>:<span class="hljs-number">#252525</span>;<br>    <span class="hljs-attribute">text-shadow</span>:none;<br>&#125;<br> <br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span><span class="hljs-selector-pseudo">:hover</span>,<br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span><span class="hljs-selector-pseudo">:active</span>&#123;<br>    <span class="hljs-attribute">color</span>:white;<br>&#125;<br> <br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">a</span>,<br><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span>&#123;<br>    <span class="hljs-attribute">color</span>:lightblue;<br>&#125;<br> <br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span>,<br><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span>&#123;<br>    <span class="hljs-attribute">color</span>:<span class="hljs-number">#C5CAE9</span>;<br>&#125;<br> <br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.new</span>,<br><span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.new</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span>&#123;<br>    <span class="hljs-attribute">color</span>:<span class="hljs-number">#FCC</span>;<br>&#125;<br> <br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.new</span><span class="hljs-selector-pseudo">:hover</span><span class="hljs-selector-pseudo">:visited</span>,<br><span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.new</span><span class="hljs-selector-pseudo">:hover</span><span class="hljs-selector-pseudo">:visited</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span>&#123;<br>    <span class="hljs-attribute">color</span>:<span class="hljs-number">#EF9A9A</span>;<br>&#125;<br> <br><span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.extiw</span><span class="hljs-selector-pseudo">:visited</span>,<br><span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.extiw</span><span class="hljs-selector-pseudo">:visited</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.heimu</span>&#123;<br>    <span class="hljs-attribute">color</span>:<span class="hljs-number">#D1C4E9</span>;<br>&#125;<br><br><span class="hljs-comment">/* MoeGirl End */</span><br></code></pre></td></tr></table></figure>
+                <p>不知道你是否有用过类似：</p>
+<div class="note note-success">
+            <p>这样</p>
+          </div>
 
-<p>对，就是这么的简单！</p>
-<p>但请注意：<strong>不要删除注释中声明源自萌百及给出 URL 的部分！！！</strong></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>相信很多站长看 CSS 便能看出如何使用它：</p>
-<p>就是用一个 <code>class=&quot;heimu&quot;</code> 的 span 标签包住内容即可。</p>
-<p>你还可以通过 <code>title=&quot;悬停内容&quot;</code> 定义鼠标悬浮在黑幕上时浮现的提示文字。</p>
-<p>e.g.</p>
-<span class="heimu" title="你知道的太多了">内容</span>
+<div class="note note-warning">
+            <p>这样</p>
+          </div>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;heimu&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;你知道的太多了&quot;</span>&gt;</span>内容<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<div class="note note-danger">
+            <p>又或是这样的标签呢？</p>
+          </div>
 
-<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>感谢萌娘百科允许使用这段 CSS！</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 以下注释节选自 https://github.com/MoegirlPediaInterfaceAdmins/MoegirlPediaInterfaceCodes/blob/master/src/gadgets/site-styles/MediaWiki:Gadget-site-styles.css commit 47c8f34。 */</span><br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * 请尊重萌娘百科版权，以下代码除非注明均是管理员手敲出来的！！！复制需要注明源自萌娘百科，并且附上URL地址 https://zh.moegirl.org.cn/MediaWiki:Gadget-site-styles.css</span><br><span class="hljs-comment"> * 版权协定：知识共享 署名-非商业性使用-相同方式共享 3.0</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></table></figure>
+<p>以上标签写的时候长这样：</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs django"><span class="hljs-template-tag">&#123;% <span class="hljs-name">note</span> success %&#125;</span><span class="language-xml"></span><br><span class="language-xml">这样</span><br><span class="language-xml"></span><span class="hljs-template-tag">&#123;% <span class="hljs-name">endnote</span> %&#125;</span><span class="language-xml"></span><br><span class="language-xml"></span><br><span class="language-xml"></span><span class="hljs-template-tag">&#123;% <span class="hljs-name">note</span> warning %&#125;</span><span class="language-xml"></span><br><span class="language-xml">这样</span><br><span class="language-xml"></span><span class="hljs-template-tag">&#123;% <span class="hljs-name">endnote</span> %&#125;</span><span class="language-xml"></span><br><span class="language-xml"></span><br><span class="language-xml"></span><span class="hljs-template-tag">&#123;% <span class="hljs-name">note</span> danger %&#125;</span><span class="language-xml"></span><br><span class="language-xml">又或是这样的标签呢？</span><br><span class="language-xml"></span><span class="hljs-template-tag">&#123;% <span class="hljs-name">endnote</span> %&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>而渲染出来就变成了这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-success&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>这样<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-warning&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>这样<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-danger&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>又或是这样的标签呢？<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>那么问题来了，这是怎么实现的？</p>
+<p>类似这样的标签可以通过 Hexo 在 v5 加入的一个功能：<code>注入器</code> 来实现。</p>
+<h2 id="什么是注入器？"><a href="#什么是注入器？" class="headerlink" title="什么是注入器？"></a>什么是注入器？</h2><p>借用来自 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/api/injector.html">Hexo 文档</a> 的解释：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">(CC BY 4.0)<br><br>注入器被用于将静态代码片段注入生成的 HTML 的 &lt;head&gt; 和/或 &lt;body&gt; 中。<br></code></pre></td></tr></table></figure>
+
+<p>简单来说，就是把上面语法里指定的内容注入到指定的一段静态代码中，然后用这段代码替换语法。</p>
+<p>那么，怎么使用它？</p>
+<h2 id="如何使用注入器？"><a href="#如何使用注入器？" class="headerlink" title="如何使用注入器？"></a>如何使用注入器？</h2><p>非常简单，首先在你使用的主题的 <code>scripts</code> 文件夹下随便建一个 <code>.js</code> 文件，叫什么随你便，在这里我们方便区分把它假定为 <code>example.js</code>。</p>
+<p>然后在 <code>example.js</code> 中写入：</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs delphi">hexo.extend.injector.<span class="hljs-keyword">register</span>(entry, value, <span class="hljs-keyword">to</span>);<br></code></pre></td></tr></table></figure>
+
+<h3 id="entry"><a href="#entry" class="headerlink" title="entry"></a>entry</h3><p>注入的静态代码片段的位置。</p>
+<ul>
+<li><code>head_begin</code>: 注入在 <code>&lt;head&gt;</code> 之后（默认）</li>
+<li><code>head_end</code>: 注入在 <code>&lt;/head&gt;</code> 之前</li>
+<li><code>body_begin</code>: 注入在 <code>&lt;body&gt;</code> 之后</li>
+<li><code>body_end</code> : 注入在 <code>&lt;/body&gt;</code> 之前</li>
+</ul>
+
                 
               </div>
             
@@ -341,8 +363,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>简单、快速地实现萌娘百科黑幕效果</div>
-      <div>https://www.initbili.top/2022/dba42bb67415/</div>
+      <div>为你的 Hexo 定制标签语法！</div>
+      <div>https://www.initbili.top/2022/74cf12f2759b/</div>
     </div>
     <div class="license-meta">
       
@@ -354,7 +376,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月3日</div>
+          <div>2022年10月4日</div>
         </div>
       
       
@@ -379,18 +401,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/74cf12f2759b/" title="为你的 Hexo 定制标签语法！">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">为你的 Hexo 定制标签语法！</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/84452dac2fe6/" title="Nginx 反向代理加密连接（HTTPS）简明教程">
-                        <span class="hidden-mobile">Nginx 反向代理加密连接（HTTPS）简明教程</span>
+                      <a href="/2022/dba42bb67415/" title="简单、快速地实现萌娘百科黑幕效果">
+                        <span class="hidden-mobile">简单、快速地实现萌娘百科黑幕效果</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
