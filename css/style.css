@@ -365,16 +365,16 @@
 .icon-xbox-fill:before {
   content: "\e795";
 }
-
-.heimu,
-.heimu rt{
-    background-color:#252525;
-}
  
  /* 萌娘百科 “黑幕” */
  /* 以下内容引用自萌娘百科 https://zh.moegirl.org.cn/MediaWiki:Gadget-site-styles.css，感谢！ */
  /* MoeGirl Start */
  
+.heimu,
+.heimu rt{
+    background-color:#252525;
+}
+
 .heimu,
 .heimu a,
 a .heimu,
