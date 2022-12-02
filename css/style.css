@@ -1,3 +1,11 @@
+/* Initial heart's Blog CSS*/
+/* 2022-12-2 */
+/* 除声明出处的部分，依照 MIT 授权，使用需要保留作者与来源。 */
+/* 无特殊情况不会改动的部分作压缩处理。 */
+
+/* 站点字体 */
+/* 严禁盗链，发现一个封一个 */
+/* Font start */
 @font-face {
     font-family: 'Harmony';
     font-display: swap;
@@ -10,415 +18,32 @@
     src: url(//initialheart.oss.aunly.cn/font/SourceCodePro.ttf);
 }
 
-@font-face {
-  font-family: "iconfont"; /* Project id 1736178 */
-  font-display: swap;
-  src: url('//at.alicdn.com/t/font_1736178_lbnruvf0jn.woff2?t=1638112270225') format('woff2'),
-       url('//at.alicdn.com/t/font_1736178_lbnruvf0jn.woff?t=1638112270225') format('woff'),
-       url('//at.alicdn.com/t/font_1736178_lbnruvf0jn.ttf?t=1638112270225') format('truetype');
-}
-
 * {
   font-family: 'SourceCodePro', Menlo, Monaco, Consolas, Courier New, 'Harmony' !important
 }
+/* Font End */
 
-.iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-.icon-coolapk:before {
-  content: "\e600";
-}
-
-.icon-coolapk-fill:before {
-  content: "\e603";
-}
-
-.icon-leetcode:before {
-  content: "\e63f";
-}
-
-.icon-pencil:before {
-  content: "\f06e";
-}
-
-.icon-brush:before {
-  content: "\e64f";
-}
-
-.icon-pen:before {
-  content: "\e639";
-}
-
-.icon-books:before {
-  content: "\e7ac";
-}
-
-.icon-plan:before {
-  content: "\e67d";
-}
-
-.icon-codeforces:before {
-  content: "\e620";
-}
-
-.icon-v2ex:before {
-  content: "\e60e";
-}
-
-.icon-bilibili:before {
-  content: "\e609";
-}
-
-.icon-douban-fill:before {
-  content: "\e60a";
-}
-
-.icon-zhihu-fill:before {
-  content: "\e608";
-}
-
-.icon-gitee-fill:before {
-  content: "\e6d0";
-}
-
-.icon-bookmark:before {
-  content: "\e627";
-}
-
-.icon-book:before {
-  content: "\ef46";
-}
-
-.icon-bookmark-fill:before {
-  content: "\ef47";
-}
-
-.icon-briefcase:before {
-  content: "\ef4f";
-}
-
-.icon-bug:before {
-  content: "\ef54";
-}
-
-.icon-map:before {
-  content: "\f040";
-}
-
-.icon-qrcode:before {
-  content: "\f08d";
-}
-
-.icon-copyright:before {
-  content: "\f28a";
-}
-
-.icon-exp-fill:before {
-  content: "\e869";
-}
-
-.icon-speakernotes:before {
-  content: "\e89c";
-}
-
-.icon-notebook:before {
-  content: "\e709";
-}
-
-.icon-note:before {
-  content: "\e883";
-}
-
-.icon-addrbook:before {
-  content: "\ef12";
-}
-
-.icon-addrcard:before {
-  content: "\ef13";
-}
-
-.icon-clipcheck:before {
-  content: "\ef73";
-}
-
-.icon-cliplist:before {
-  content: "\ef74";
-}
-
-.icon-code:before {
-  content: "\ef79";
-}
-
-.icon-comment:before {
-  content: "\ef7e";
-}
-
-.icon-mail:before {
-  content: "\efae";
-}
-
-.icon-image:before {
-  content: "\f024";
-}
-
-.icon-images:before {
-  content: "\f025";
-}
-
-.icon-mobile:before {
-  content: "\f052";
-}
-
-.icon-rss:before {
-  content: "\f09c";
-}
-
-.icon-rss-fill:before {
-  content: "\f09d";
-}
-
-.icon-th-large:before {
-  content: "\f103";
-}
-
-.icon-friends:before {
-  content: "\f133";
-}
-
-.icon-users:before {
-  content: "\f13a";
-}
-
-.icon-docker:before {
-  content: "\f18e";
-}
-
-.icon-music:before {
-  content: "\f1d7";
-}
-
-.icon-kaggle:before {
-  content: "\f1dd";
-}
-
-.icon-renren:before {
-  content: "\f221";
-}
-
-.icon-steam:before {
-  content: "\f23b";
-}
-
-.icon-alipay-fill:before {
-  content: "\e759";
-}
-
-.icon-apple-fill:before {
-  content: "\e75a";
-}
-
-.icon-baidu-fill:before {
-  content: "\e75c";
-}
-
-.icon-bilibili-fill:before {
-  content: "\e75d";
-}
-
-.icon-dingding-fill:before {
-  content: "\e75e";
-}
-
-.icon-discord-fill:before {
-  content: "\e763";
-}
-
-.icon-facebook-fill:before {
-  content: "\e764";
-}
-
-.icon-github-fill:before {
-  content: "\e768";
-}
-
-.icon-gitlab-fill:before {
-  content: "\e769";
-}
-
-.icon-instagram-fill:before {
-  content: "\e76b";
-}
-
-.icon-kakao-talk-fill:before {
-  content: "\e76c";
-}
-
-.icon-codepen-fill:before {
-  content: "\e76d";
-}
-
-.icon-linkedin-fill:before {
-  content: "\e76f";
-}
-
-.icon-line-fill:before {
-  content: "\e770";
-}
-
-.icon-medium-fill:before {
-  content: "\e771";
-}
-
-.icon-evernote-fill:before {
-  content: "\e774";
-}
-
-.icon-mini-program-fill:before {
-  content: "\e775";
-}
-
-.icon-google-fill:before {
-  content: "\e778";
-}
-
-.icon-playstation-fill:before {
-  content: "\e779";
-}
-
-.icon-qq-fill:before {
-  content: "\e77d";
-}
-
-.icon-reddit-fill:before {
-  content: "\e77e";
-}
-
-.icon-pinterest-fill:before {
-  content: "\e77f";
-}
-
-.icon-skype-fill:before {
-  content: "\e780";
-}
-
-.icon-slack-fill:before {
-  content: "\e781";
-}
-
-.icon-stack-overflow-fill:before {
-  content: "\e783";
-}
-
-.icon-telegram-fill:before {
-  content: "\e785";
-}
-
-.icon-tumblr-fill:before {
-  content: "\e786";
-}
-
-.icon-snapchat-fill:before {
-  content: "\e787";
-}
-
-.icon-taobao-fill:before {
-  content: "\e788";
-}
-
-.icon-twitter-fill:before {
-  content: "\e789";
-}
-
-.icon-twitch-fill:before {
-  content: "\e78a";
-}
-
-.icon-switch-fill:before {
-  content: "\e78b";
-}
-
-.icon-wechat2-fill:before {
-  content: "\e78d";
-}
-
-.icon-wechat-fill:before {
-  content: "\e78f";
-}
-
-.icon-youtube-fill:before {
-  content: "\e790";
-}
-
-.icon-weibo-fill:before {
-  content: "\e791";
-}
-
-.icon-whatsapp-fill:before {
-  content: "\e792";
-}
-
-.icon-xbox-fill:before {
-  content: "\e795";
-}
+/* 主题需要的 CSS  */
+/* Fluid Start */
+@font-face{font-family:"iconfont";font-display:swap;src:url('//at.alicdn.com/t/font_1736178_lbnruvf0jn.woff2?t=1638112270225') format('woff2'),url('//at.alicdn.com/t/font_1736178_lbnruvf0jn.woff?t=1638112270225') format('woff'),url('//at.alicdn.com/t/font_1736178_lbnruvf0jn.ttf?t=1638112270225') format('truetype')}.iconfont{font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-coolapk:before{content:"\e600"}.icon-coolapk-fill:before{content:"\e603"}.icon-leetcode:before{content:"\e63f"}.icon-pencil:before{content:"\f06e"}.icon-brush:before{content:"\e64f"}.icon-pen:before{content:"\e639"}.icon-books:before{content:"\e7ac"}.icon-plan:before{content:"\e67d"}.icon-codeforces:before{content:"\e620"}.icon-v2ex:before{content:"\e60e"}.icon-bilibili:before{content:"\e609"}.icon-douban-fill:before{content:"\e60a"}.icon-zhihu-fill:before{content:"\e608"}.icon-gitee-fill:before{content:"\e6d0"}.icon-bookmark:before{content:"\e627"}.icon-book:before{content:"\ef46"}.icon-bookmark-fill:before{content:"\ef47"}.icon-briefcase:before{content:"\ef4f"}.icon-bug:before{content:"\ef54"}.icon-map:before{content:"\f040"}.icon-qrcode:before{content:"\f08d"}.icon-copyright:before{content:"\f28a"}.icon-exp-fill:before{content:"\e869"}.icon-speakernotes:before{content:"\e89c"}.icon-notebook:before{content:"\e709"}.icon-note:before{content:"\e883"}.icon-addrbook:before{content:"\ef12"}.icon-addrcard:before{content:"\ef13"}.icon-clipcheck:before{content:"\ef73"}.icon-cliplist:before{content:"\ef74"}.icon-code:before{content:"\ef79"}.icon-comment:before{content:"\ef7e"}.icon-mail:before{content:"\efae"}.icon-image:before{content:"\f024"}.icon-images:before{content:"\f025"}.icon-mobile:before{content:"\f052"}.icon-rss:before{content:"\f09c"}.icon-rss-fill:before{content:"\f09d"}.icon-th-large:before{content:"\f103"}.icon-friends:before{content:"\f133"}.icon-users:before{content:"\f13a"}.icon-docker:before{content:"\f18e"}.icon-music:before{content:"\f1d7"}.icon-kaggle:before{content:"\f1dd"}.icon-renren:before{content:"\f221"}.icon-steam:before{content:"\f23b"}.icon-alipay-fill:before{content:"\e759"}.icon-apple-fill:before{content:"\e75a"}.icon-baidu-fill:before{content:"\e75c"}.icon-bilibili-fill:before{content:"\e75d"}.icon-dingding-fill:before{content:"\e75e"}.icon-discord-fill:before{content:"\e763"}.icon-facebook-fill:before{content:"\e764"}.icon-github-fill:before{content:"\e768"}.icon-gitlab-fill:before{content:"\e769"}.icon-instagram-fill:before{content:"\e76b"}.icon-kakao-talk-fill:before{content:"\e76c"}.icon-codepen-fill:before{content:"\e76d"}.icon-linkedin-fill:before{content:"\e76f"}.icon-line-fill:before{content:"\e770"}.icon-medium-fill:before{content:"\e771"}.icon-evernote-fill:before{content:"\e774"}.icon-mini-program-fill:before{content:"\e775"}.icon-google-fill:before{content:"\e778"}.icon-playstation-fill:before{content:"\e779"}.icon-qq-fill:before{content:"\e77d"}.icon-reddit-fill:before{content:"\e77e"}.icon-pinterest-fill:before{content:"\e77f"}.icon-skype-fill:before{content:"\e780"}.icon-slack-fill:before{content:"\e781"}.icon-stack-overflow-fill:before{content:"\e783"}.icon-telegram-fill:before{content:"\e785"}.icon-tumblr-fill:before{content:"\e786"}.icon-snapchat-fill:before{content:"\e787"}.icon-taobao-fill:before{content:"\e788"}.icon-twitter-fill:before{content:"\e789"}.icon-twitch-fill:before{content:"\e78a"}.icon-switch-fill:before{content:"\e78b"}.icon-wechat2-fill:before{content:"\e78d"}.icon-wechat-fill:before{content:"\e78f"}.icon-youtube-fill:before{content:"\e790"}.icon-weibo-fill:before{content:"\e791"}.icon-whatsapp-fill:before{content:"\e792"}.icon-xbox-fill:before{content:"\e795"}
+ /* Fluid End */
  
  /* 萌娘百科 “黑幕” */
  /* 以下内容引用自萌娘百科 https://zh.moegirl.org.cn/MediaWiki:Gadget-site-styles.css，感谢！ */
- /* MoeGirl Start */
- 
-.heimu,
-.heimu rt{
-    background-color:#252525;
-}
+ /* MoeGirlHeimu Start */
+.heimu,.heimu rt{background-color:#252525}.heimu,.heimu a,a .heimu,a.new .heimu,span.heimu a.new,span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited,span.heimu a.mw-disambig,span.heimu a.mw-redirect{transition:color 0.13s linear;color:#252525;text-shadow:none}span.heimu:hover,span.heimu:active{color:white}span.heimu:hover a,a:hover span.heimu{color:lightblue}span.heimu:hover a:visited,a:visited:hover span.heimu{color:#C5CAE9}span.heimu:hover a.new,a.new:hover span.heimu{color:#FCC}span.heimu a.new:hover:visited,a.new:hover:visited span.heimu{color:#EF9A9A}span.heimu:hover a.extiw:visited,a.extiw:visited:hover span.heimu{color:#D1C4E9}
+/* MoeGirlHeimu End */
 
-.heimu,
-.heimu a,
-a .heimu,
-a.new .heimu,
-span.heimu a.new,
-span.heimu a.external,
-span.heimu a.external:visited,
-span.heimu a.extiw,
-span.heimu a.extiw:visited,
-span.heimu a.mw-disambig,
-span.heimu a.mw-redirect{
-    transition:color 0.13s linear;
-    color:#252525;
-    text-shadow:none;
+/* 特别添加的 CSS */
+/* 永垂不朽！ */
+/* http://www.news.cn/politics/2022-11/30/c_1129174030.htm */
+/* Jiang Start */
+html {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
 }
- 
-span.heimu:hover,
-span.heimu:active{
-    color:white;
-}
- 
-span.heimu:hover a,
-a:hover span.heimu{
-    color:lightblue;
-}
- 
-span.heimu:hover a:visited,
-a:visited:hover span.heimu{
-    color:#C5CAE9;
-}
- 
-span.heimu:hover a.new,
-a.new:hover span.heimu{
-    color:#FCC;
-}
- 
-span.heimu a.new:hover:visited,
-a.new:hover:visited span.heimu{
-    color:#EF9A9A;
-}
- 
-span.heimu:hover a.extiw:visited,
-a.extiw:visited:hover span.heimu{
-    color:#D1C4E9;
-}
-
-/* MoeGirl End */
+/* Jiang End */
