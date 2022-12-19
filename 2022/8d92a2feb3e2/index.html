@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p2/img_9.png">
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/p2/img_10.png">
 <meta property="article:published_time" content="2022-08-20T16:02:21.000Z">
-<meta property="article:modified_time" content="2022-10-04T21:25:09.686Z">
+<meta property="article:modified_time" content="2022-12-19T08:07:15.406Z">
 <meta property="article:author" content="Initial heart">
 <meta property="article:tag" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.2k 字
+          7.1k 字
         
       </span>
     
@@ -285,7 +285,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年10月5日 凌晨
+                    本文最后更新于：2022年12月19日 下午
                   
                 
               </p>
@@ -311,6 +311,7 @@
 <p>  那么，mirai-api-http是什么？mirai-api-http（下称 MAH 或 mah） 是 mirai-console 的一个插件，原生的 mirai-console 插件使用 kt 或 java 编写，mirai-api-http 通过提供 API 的方式让更多语言可以接入 mirai-console。</p>
 <p>  mirai 的相关介绍，由于其项目 README 有些限制，我不好引用，所以请 <a target="_blank" rel="noopener" href="https://github.com/mamoe/mirai">自己去看</a>    </p>
 <p>  2022-09-23 补充一句：本文系在 2022-08-21 完成大部分内容的编写的，当时项目的最新生产版本为 v5。所以本文，包括下方高级使用与二次开发中提到的对于 AmiyaBot 的部分都存在一个前提，即在 v5 下。现在，我强烈推荐你选择即将完工的 v6。具体事项请参阅 <code>部署 Amiya-Bot</code> 部分。Good luck！    </p>
+<p>  2022-12-19 补充：近期 v5 相关文档已经不再提供，故本文删除了关于 v5 的内容。另新增了 mirai 报 <code>QQ版本过低</code> 的解决方案。</p>
 <p>  那么基本情况就介绍到这里，接下来开始正式的部署。</p>
 <h3 id="2-部署-mirai"><a href="#2-部署-mirai" class="headerlink" title="2. 部署 mirai"></a>2. 部署 mirai</h3><p>  都说 Amiya-Bot 基于 mirai-api-http 了，那当然先得从“基于”开始做起嘛。就好像盖房子总得先盖地基一样，而 mirai-api-http 又基于 mirai-console （一般用户方便理解可以直接看作 mirai 本体），mirai 就像地基填的混凝土，而 mah 则是钢筋。所以我们先来进行混凝土的制作，也就是 mirai 的部署。</p>
 <p>  部署 mirai 对于一般用户来说就是部署 mirai-console，mirai-console 有个启动器叫做 Mirai Console Loader 简称 MCL（下称可能为 mcl），而 MCL 又有个安装器叫做 MCL Installer（下称 MCLI 或 mcli），所以我们现在先去下载 MCL Installer。</p>
@@ -389,8 +390,7 @@
 
 <p>  好了，现在你已经打好了地基，可以在上面建房子了。接下来我们进行 Amiya-Bot 的部署。</p>
 <h3 id="6-部署-Amiya-Bot"><a href="#6-部署-Amiya-Bot" class="headerlink" title="6. 部署 Amiya-Bot"></a>6. 部署 Amiya-Bot</h3><p>  折腾了这么久，总算是轮到部署 Amiya-Bot 了！但是……Amiya-Bot 有完备的文档，直接查阅项目官网即可。</p>
-<p>  <a target="_blank" rel="noopener" href="https://www.amiyabot.com/guide/deploy/getStarted.html">v6请看这里（推荐！）</a></p>
-<p>  <a target="_blank" rel="noopener" href="https://www.amiya.cn/docs/deployByCode.html">v5请看这里</a></p>
+<p>  <a target="_blank" rel="noopener" href="https://www.amiyabot.com/guide/deploy/getStarted.html">请看这里</a></p>
 <p>  敬请留意：不久后我们可能会彻底停止 v5 版本的维护，届时 v5 版本的官网可能会更改为现在 AmiyaBot 框架官网的镜像。</p>
 <p>  笔者十分推荐你使用代码部署而不是 exe (Windows 可执行文件) 部署，因为代码会比打包好的 exe 灵活得多（虽然这会需要你配置 Python 环境）。</p>
 <p>  就这样。</p>
@@ -407,15 +407,9 @@
   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">playwright install chromium<br></code></pre></td></tr></table></figure>
 
 <p>  在部署过程中遇到其他问题可以加入项目的官方频道或者发电邮到 <code>support@amiya.cn</code>。</p>
-<h3 id="7-高级使用与二次开发"><a href="#7-高级使用与二次开发" class="headerlink" title="7. 高级使用与二次开发"></a>7. 高级使用与二次开发</h3><h4 id="I-高级使用"><a href="#I-高级使用" class="headerlink" title="I. 高级使用"></a>I. 高级使用</h4><h5 id="1-数据库"><a href="#1-数据库" class="headerlink" title="1. 数据库"></a>1. 数据库</h5><p>  如果你的用户很多，默认的 <code>Sqlite</code> 无法满足你的需求，你还可以使用 <code>Mysql</code>。</p>
-<h6 id="v5"><a href="#v5" class="headerlink" title="v5"></a>v5</h6><p>  在 <code>config\private\database.yaml</code> 中可以配置使用的数据库，如果想使用 <code>Mysql</code>，请按下面的配置说明进行配置：</p>
-  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">mysql:</span><br>    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">config:</span><br>        <span class="hljs-attr">host:</span> <span class="hljs-string">数据库地址</span><br>        <span class="hljs-attr">port:</span> <span class="hljs-string">数据库端口</span><br>        <span class="hljs-attr">user:</span> <span class="hljs-string">登录用户名</span><br>        <span class="hljs-attr">password:</span> <span class="hljs-string">登录密码</span><br>    <span class="hljs-attr">databases:</span><br>        <span class="hljs-attr">bot:</span> <span class="hljs-string">amiya_bot</span><br>        <span class="hljs-attr">group:</span> <span class="hljs-string">amiya_group</span><br>        <span class="hljs-attr">message:</span> <span class="hljs-string">amiya_message</span><br>        <span class="hljs-attr">user:</span> <span class="hljs-string">amiya_user</span><br><br><span class="hljs-attr">sqlite:</span><br>    <span class="hljs-attr">bot:</span> <span class="hljs-string">database/bot.db</span><br>    <span class="hljs-attr">group:</span> <span class="hljs-string">database/group.db</span><br>    <span class="hljs-attr">message:</span> <span class="hljs-string">database/message.db</span><br>    <span class="hljs-attr">user:</span> <span class="hljs-string">database/user.db</span><br></code></pre></td></tr></table></figure>
-
-<p>  需要在 <code>Mysql</code> 中新建四个库，库名可以自己设定，填在上方的 <code>databases</code> 中，当然推荐是使用配置默认的这四个名称。</p>
-<p>  在 <code>Mysql</code> 启用时，<code>Sqlite</code> 的配置会被忽略，也不会使用它。</p>
+<h3 id="7-高级使用与二次开发"><a href="#7-高级使用与二次开发" class="headerlink" title="7. 高级使用与二次开发"></a>7. 高级使用与二次开发</h3><h4 id="I-高级使用"><a href="#I-高级使用" class="headerlink" title="I. 高级使用"></a>I. 高级使用</h4><h5 id="①-数据库"><a href="#①-数据库" class="headerlink" title="①. 数据库"></a>①. 数据库</h5><p>  如果你的用户很多，默认的 <code>Sqlite</code> 无法满足你的需求，你还可以使用 <code>Mysql</code>。</p>
 <h6 id="v6"><a href="#v6" class="headerlink" title="v6"></a>v6</h6><p>  请参阅 <a target="_blank" rel="noopener" href="https://www.amiyabot.com/guide/deploy/advanced/mysql.html">项目文档</a></p>
-<h5 id="2-添加表情"><a href="#2-添加表情" class="headerlink" title="2. 添加表情"></a>2. 添加表情</h5><p>  不知道你是否注意到了，当你发送 <code>兔兔</code> 这类呼叫而不触发任何功能的语句时，Amiya 会随机回复一些表情包。这些表情包同样是可以自由增减的。</p>
-<h6 id="v5-1"><a href="#v5-1" class="headerlink" title="v5"></a>v5</h6><p>  将想要添加的图片放入 <code>resource\images\face</code> 中即可，支持 <code>GIF</code>。</p>
+<h5 id="②-添加表情"><a href="#②-添加表情" class="headerlink" title="②. 添加表情"></a>②. 添加表情</h5><p>  不知道你是否注意到了，当你发送 <code>兔兔</code> 这类呼叫而不触发任何功能的语句时，Amiya 会随机回复一些表情包。这些表情包同样是可以自由增减的。</p>
 <h6 id="v6-1"><a href="#v6-1" class="headerlink" title="v6"></a>v6</h6> <div class="note note-warning">
             <p>请确定你已安装 <span class="label label-info">兔兔互动</span> 插件。</p>
           </div>
@@ -424,7 +418,7 @@
             <p>上面的路径省略了版本号。</p>
           </div>
 
-<h5 id="3-手动获取验证码-ticket"><a href="#3-手动获取验证码-ticket" class="headerlink" title="3.手动获取验证码 ticket"></a>3.手动获取验证码 ticket</h5><p>  有时候可能你不方便或者懒得使用手机通过验证码，你还可以使用电脑手动获得 ticket。</p>
+<h5 id="③-手动获取验证码-ticket"><a href="#③-手动获取验证码-ticket" class="headerlink" title="③. 手动获取验证码 ticket"></a>③. 手动获取验证码 ticket</h5><p>  有时候可能你不方便或者懒得使用手机通过验证码，你还可以使用电脑手动获得 ticket。</p>
 <div class="note note-info">
             <p>为什么初次部署要求你一定要有手机？因为随后还有设备锁等着你。</p>
           </div>
@@ -434,10 +428,18 @@
 <p>  此时通过滑动验证码，如果页面没有显示空白而是要求你再次通过验证码，再次通过即可；在打开的开发人员工具中找到 <code>cap_union_new_verify</code>，如果你通过了多个验证码则找按时间线升序排列最底下也就是最新的那一个，双击后切换到 <code>响应</code> 选项卡，写着 <code>ticket</code> 的后面引号部分则是 ticket，注意不含前后的引号。</p>
 <p>  <img src="//initialheart.oss.aunly.cn/img/p2/img_9.png" srcset="/img/loading.gif" lazyload alt="在通过多个验证码之后找到最新的 cap_union_new_verify"></p>
 <p>  <img src="//initialheart.oss.aunly.cn/img/p2/img_10.png" srcset="/img/loading.gif" lazyload alt="获得 ticket"></p>
-<h4 id="II-二次开发"><a href="#II-二次开发" class="headerlink" title="II.二次开发"></a>II.二次开发</h4><p>  在本文的开头说到，你完全可以将 Amiya-Bot 当作机器人框架来使用。</p>
+<h4 id="II-二次开发"><a href="#II-二次开发" class="headerlink" title="II. 二次开发"></a>II. 二次开发</h4><p>  在本文的开头说到，你完全可以将 Amiya-Bot 当作机器人框架来使用。</p>
 <p>  如果你有 Python 基础，又想开发属于自己的个性化功能，你可以查阅项目的开发文档。</p>
 <p>  <a target="_blank" rel="noopener" href="https://www.amiyabot.com/develop/basic/">v6 开发文档（推荐！）</a></p>
-<p>  <a target="_blank" rel="noopener" href="https://www.amiya.cn/docs/develop/develop.html">v5 开发文档（警告：可能即将弃用！）</a></p>
+<h3 id="8-常见问题"><a href="#8-常见问题" class="headerlink" title="8. 常见问题"></a>8. 常见问题</h3><p>  暂时没想到什么问题，因为大多数情况已经在文中写明。</p>
+<p>  如果你有任何问题，欢迎在评论区提出，如果有必要的话它将会出现在这里。</p>
+<p>  当然，由于情况随时间发生变化而造成的问题也会在这里提出。</p>
+<h4 id="Ⅰ-使用一段时间后-mirai-提示-“QQ-版本过低”"><a href="#Ⅰ-使用一段时间后-mirai-提示-“QQ-版本过低”" class="headerlink" title="Ⅰ. 使用一段时间后 mirai 提示 “QQ 版本过低”"></a>Ⅰ. 使用一段时间后 mirai 提示 “QQ 版本过低”</h4><p>  似乎是因为腾讯侧的变动。截至本方案发布 (2022-12-19) 时未发现 mirai 修复此问题。</p>
+<p>  临时解决方案：</p>
+<p>  删除 <code>&#123;mcl根目录&#125;/bots/&#123;你的 Bot QQ号&#125;/device.json</code>，重启 mirai。</p>
+<p>  还可以添加 <a target="_blank" rel="noopener" href="https://github.com/cssxsh/mirai-device-generator">cssxsh&#x2F;mirai-device-generator</a> 插件，以生成可能更可靠的 <code>device.json</code>。</p>
+<p>  另外，如果你对 mirai 的插件没有强需求，可以转至 gocq 以解决该问题。gocq 用户目前没有相关问题的报告。</p>
+<p>  如果你想转至 gocq，参照 <a target="_blank" rel="noopener" href="https://www.amiyabot.com/guide/deploy/yourChoose.html#%E4%BD%BF%E7%94%A8-go-cqhttp">这里</a></p>
 <p>  Enjoy！</p>
 
                 
