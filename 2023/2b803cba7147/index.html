@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/nim/py202333461516.png">
 <meta property="og:image" content="https://initialheart.oss.aunly.cn/img/nim/py20233346116.png">
 <meta property="article:published_time" content="2023-03-03T08:00:00.000Z">
-<meta property="article:modified_time" content="2023-03-04T07:57:54.554Z">
+<meta property="article:modified_time" content="2023-03-04T08:11:25.454Z">
 <meta property="article:author" content="Initial heart">
 <meta property="article:tag" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
 <meta name="twitter:card" content="summary_large_image">
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.4k 字
+          4.2k 字
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          18 分钟
+          21 分钟
         
       </span>
     
@@ -367,8 +367,12 @@
 <p>所以，如果准备将 code-server 暴露至公网，则非常有必要为连接加密。如果不这么做，将面临极大风险。</p>
 <p>若想了解更多信息，则可参考我的 <a href="https://www.initbili.top/2022/84452dac2fe6/">这篇文章</a>。</p>
 <p>实际上，code-server 本身也支持 HTTPS，但不推荐你直接使用。没有原因。</p>
+<p>另外，code-server 使用了 WebSocket 连接，这意味着需要一些小调整，调整后的配置如下：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs perl">    <span class="hljs-keyword">map</span> $http_upgrade $connection_upgrade &#123;<br>    default upgrade;<br>    <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-keyword">close</span>;<br>&#125;<br>    server &#123;<br>        <span class="hljs-keyword">listen</span>       <span class="hljs-number">11451</span> ssl;<br>        server_name  example.com;<br><br>        access_log  logs/host.access.log  main;<br><br>        ssl_certificate      example.com.pem;<br>        ssl_certificate_key  example.com.key;<br><br>        location / &#123;<br>            add_header Content-Security-Policy upgrade-insecure-requests;<br>            proxy_pass http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span>:<span class="hljs-number">11451</span>/;<br>            proxy_set_header Host $proxy_host;<br>            proxy_read_timeout <span class="hljs-number">300</span>s;<br>            proxy_send_timeout <span class="hljs-number">300</span>s;<br>            proxy_set_header X-Real-IP $remote_addr;<br>            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;<br>            proxy_set_header Upgrade $http_upgrade;<br>            proxy_set_header Connection $connection_upgrade;<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>有关如何使用它，参考上方给出的文章连接。</p>
 <h1 id="五、访问服务"><a href="#五、访问服务" class="headerlink" title="五、访问服务"></a>五、访问服务</h1><p>在部署的机器上访问 <code>127.0.0.1:11451</code> 即可。</p>
-<p>如果需要暴露到公网，则请更改配置文件中 <code>bind-addr</code> 字段的 <code>127.0.0.1</code> 至 <code>0.0.0.0</code>。不推荐这样做，推荐使用 Nginx 反向代理暴露到公网。详见 <a href="https://www.initbili.top/2022/84452dac2fe6/">这篇文章</a>。</p>
+<p>如果需要暴露到公网，则请更改配置文件中 <code>bind-addr</code> 字段的 <code>127.0.0.1</code> 至 <code>0.0.0.0</code>。不推荐这样做，推荐使用 Nginx 反向代理暴露到公网。详见第四节。</p>
 <h1 id="题外：Python-环境的准备"><a href="#题外：Python-环境的准备" class="headerlink" title="题外：Python 环境的准备"></a>题外：Python 环境的准备</h1><p>一开始我以为安装程序依赖 Python，所以需要配置 Python 环境，在测试本文流程时发现并不需要，但是写了还是留着备用。</p>
 <p>这里使用 Python 3.8。</p>
 <h2 id="1-下载-Python"><a href="#1-下载-Python" class="headerlink" title="1.下载 Python"></a>1.下载 Python</h2><p><a target="_blank" rel="noopener" href="https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe">点击此处</a> 跳转至 Python 官网 Python 3.8.10 Windows X64 版本安装包下载链接。</p>
