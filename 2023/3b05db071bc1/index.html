@@ -18,15 +18,15 @@
   <meta name="author" content="Initial heart">
   <meta name="keywords" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
   
-    <meta name="description" content="2022-10-29，我注意到我的 Blog 出现了严重的样式错误，经排查发现是由 A60 提供的静态资源托管 Down 了，询问得知是内容审查失误，短时内无法恢复。 这直接使我的 Blog 样式完全崩溃，因为样式和文章中的图片都是托管的，托管 Down 了之后甚至连主要的 CSS 都无法得到！">
+    <meta name="description" content="在文章的开头首先给各位拜个年，新年快乐！ 不知道你会不会感到奇怪，为什么大过年的突然有了这篇文章呢？当然是因为上个月忘记水博文了这个月爬起来水一篇再说 事情的起因是这样的：我有一个定时执行某程序的需求，因为我的服务器是 Windows，所以我准备使用批处理来达成目的，于是： 123456789101112:: 关闭回显@echo off:: 为死循环打一个开始标记:loop:: 执行目标程序exa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一次突发事故的抢修">
-<meta property="og:url" content="https://www.initbili.top/2022/c9e528dcc770/">
+<meta property="og:title" content="Windows 批处理脚本在特定情况下的一个有趣现象">
+<meta property="og:url" content="https://www.initbili.top/2023/3b05db071bc1/">
 <meta property="og:site_name" content="Initial_heart&#39;s Blog">
-<meta property="og:description" content="2022-10-29，我注意到我的 Blog 出现了严重的样式错误，经排查发现是由 A60 提供的静态资源托管 Down 了，询问得知是内容审查失误，短时内无法恢复。 这直接使我的 Blog 样式完全崩溃，因为样式和文章中的图片都是托管的，托管 Down 了之后甚至连主要的 CSS 都无法得到！">
+<meta property="og:description" content="在文章的开头首先给各位拜个年，新年快乐！ 不知道你会不会感到奇怪，为什么大过年的突然有了这篇文章呢？当然是因为上个月忘记水博文了这个月爬起来水一篇再说 事情的起因是这样的：我有一个定时执行某程序的需求，因为我的服务器是 Windows，所以我准备使用批处理来达成目的，于是： 123456789101112:: 关闭回显@echo off:: 为死循环打一个开始标记:loop:: 执行目标程序exa">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-29T16:30:33.000Z">
-<meta property="article:modified_time" content="2022-10-29T18:07:07.308Z">
+<meta property="article:published_time" content="2023-01-20T23:00:31.000Z">
+<meta property="article:modified_time" content="2023-01-19T14:40:13.445Z">
 <meta property="article:author" content="Initial heart">
 <meta property="article:tag" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
 <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>一次突发事故的抢修 - Initial_heart&#39;s Blog</title>
+  <title>Windows 批处理脚本在特定情况下的一个有趣现象 - Initial_heart&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -188,7 +188,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="一次突发事故的抢修"></span>
+            <span id="subtitle" data-typed-text="Windows 批处理脚本在特定情况下的一个有趣现象"></span>
           
         </div>
 
@@ -199,8 +199,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-30 00:30" pubdate>
-          2022年10月30日 凌晨
+        <time datetime="2023-01-21 07:00" pubdate>
+          2023年1月21日 早上
         </time>
       </span>
     
@@ -211,7 +211,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          1.8k 字
         
       </span>
     
@@ -222,7 +222,7 @@
         
         
         
-          8 分钟
+          10 分钟
         
       </span>
     
@@ -268,12 +268,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">一次突发事故的抢修</h1>
+            <h1 style="display: none">Windows 批处理脚本在特定情况下的一个有趣现象</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年10月30日 凌晨
+                    本文最后更新于：2023年1月19日 晚上
                   
                 
               </p>
@@ -281,43 +281,30 @@
             
               <div class="markdown-body">
                 
-                <p>2022-10-29，我注意到我的 Blog 出现了严重的样式错误，经排查发现是由 A60 提供的静态资源托管 Down 了，询问得知是内容审查失误，短时内无法恢复。</p>
-<p>这直接使我的 Blog 样式完全崩溃，因为样式和文章中的图片都是托管的，托管 Down 了之后甚至连主要的 CSS 都无法得到！</p>
-<span id="more"></span>
+                <p>在文章的开头首先给各位拜个年，新年快乐！</p>
+<p>不知道你会不会感到奇怪，为什么大过年的突然有了这篇文章呢？<span class="heimu" title="你知道的太多了">当然是因为上个月忘记水博文了这个月爬起来水一篇再说</span></p>
+<p>事情的起因是这样的：我有一个定时执行某程序的需求，因为我的服务器是 Windows，所以我准备使用批处理来达成目的，于是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">:: 关闭回显<br>@echo off<br>:: 为死循环打一个开始标记<br>:loop<br>:: 执行目标程序<br>example<br>:: 利用 timeout 来获得足够的间隔<br>timeout -t &#123;XXsec&#125; -NOBREAK<br>:: 避免 timeout 可能的误差，让目标程序更晚执行<br>ping 127.0.0.1<br>:: 跳转到 loop 标记，开始死循环<br>goto loop<br></code></pre></td></tr></table></figure>
 
-<h2 id="一、方案选择"><a href="#一、方案选择" class="headerlink" title="一、方案选择"></a>一、方案选择</h2><p>由于托管源不能在短时间内恢复，故必须快速找到一个新的托管源接入。我立刻联系了为本站提供评论托管的 hvjg2578，但未能及时得到回应，于是我选择了腾讯云的对象存储服务。</p>
-<p>然后是换源方案的选择，当时的我想到两种解决方案：</p>
-<h3 id="1-整体换源"><a href="#1-整体换源" class="headerlink" title="1.整体换源"></a>1.整体换源</h3><p>即更换访问域名，直接整体从 initialheart.oss.aunly.cn 切走。</p>
-<p>经过思考和与 A60 的联系，放弃了这一方案，原因如下：</p>
-<p>1.这难以在短时间内完成。因为使用了绝对地址，如果更换访问域名，需要变动的地方是很多的，工作量巨大。</p>
-<p>2.这不利于后续恢复。腾讯云的对象存储终究是过渡方案，日后仍需切换到其他源，届时我还得做一次切换，得不偿失。</p>
-<p>3.DNS 处于控制下。详见方案 2。</p>
-<h3 id="2-更换解析"><a href="#2-更换解析" class="headerlink" title="2.更换解析"></a>2.更换解析</h3><p>即更改域名 DNS 记录，解析到其他源。</p>
-<p>一开始我是没有考虑这个方案的，因为 DNS 并不在我的控制下，但和 A60 取得联系后考虑到方案 1 可怕的工作量，立刻提出了更换解析。</p>
-<p>最后，我选择使用方案 2 完成换源。</p>
-<h2 id="二、更换托管源"><a href="#二、更换托管源" class="headerlink" title="二、更换托管源"></a>二、更换托管源</h2><p>首先，我登录腾讯云创建了一个存储桶，并将静态资源扔进了里面。</p>
-<p>然后，查阅文档并联系 A60 将域名的解析切换至存储桶域名。</p>
-<p>最后，申请一个 HTTPS 证书并部署。</p>
-<p>看起来是不是很简单？但其实出了许多问题。</p>
-<h3 id="1-COS-不正常工作"><a href="#1-COS-不正常工作" class="headerlink" title="1.COS 不正常工作"></a>1.COS 不正常工作</h3><p>等到 DNS 记录应用后，我刷新页面并打开开发人员工具，却发现所有的资源都得到了一个 400。</p>
-<p>然后我立即联系了腾讯云的技术支持，腾讯云的工程师在测试后发现正常，然后我刷新页面也恢复了正常。</p>
-<p>或许是部署的延迟吧？总之，如果你遇到类似错误，不要着急，等等看。</p>
-<h3 id="2-要命的-CORS"><a href="#2-要命的-CORS" class="headerlink" title="2.要命的 CORS"></a>2.要命的 CORS</h3><p>几乎是在上一个问题解决的同时，我想起了一个要命的家伙：CORS。</p>
-<p>随后我马上打开了控制台，果不其然得到了几条 CORS 错误。</p>
-<p>对 COS 的 CORS 进行配置后解决了问题。</p>
-<h3 id="3-防盗链是把双刃剑"><a href="#3-防盗链是把双刃剑" class="headerlink" title="3.防盗链是把双刃剑"></a>3.防盗链是把双刃剑</h3><p>为了避免流量被盗刷，我在部署时顺带开启了 COS 的防盗链。</p>
-<p>然后，我注意到网站的字体文件始终无法正常加载并返回一个 403，我立即联系了腾讯云的工程师，工程师回复说 Referer 不对，于是我就开始查找原因。</p>
-<p>在得到工程师的回复后，我立即瞟了一眼 Referer，结果将 Referer 错看成了跟请求的资源链接完全一致，于是开始查找资料，未果。</p>
-<p>随后，我灵光一闪：Referer 报告来源，那我为什么不从请求来源开始找呢？于是我查看报错的请求来源，看到请求是由 CSS 发起的，检查 Referer 后发现 Referer 地址是 CSS 的文件地址，在心里暗骂自己真蠢的同时我立刻意识到了问题所在：我的 CSS 来自 COS，CSS 引用来自 COS 的内容，而 COS 的 Referer 白名单没有 COS 自身，不符合防盗链规则，所以返回了 403。</p>
-<p>于是给 Referer 白名单添加了 COS 域名，解决了这个问题。</p>
-<h2 id="三、后续处理"><a href="#三、后续处理" class="headerlink" title="三、后续处理"></a>三、后续处理</h2><p>后续有进展再说了(2022-10-30)</p>
-<h2 id="四、总结与反思"><a href="#四、总结与反思" class="headerlink" title="四、总结与反思"></a>四、总结与反思</h2><p>这次事故的起因并不在我，但是它仍然暴露了许多问题：</p>
-<p>1.本站的容灾机制基本&#x3D;0，没有干预的话一旦托管源 Down 了那就完了。</p>
-<p>2.本站的状态监测不完备。根据反馈，这个故障在我发现它的几天前就存在了，而我直到几天后才后知后觉的发现并处置它。</p>
-<p>3.本站的资源托管策略有严重隐患。资源直接使用绝对链接，这使我在切换源时耽误了很长时间。</p>
-<p>总而言之，本站属于是要多乱有多乱，也就表面功夫能看。</p>
-<p>回头空闲下来了再抽时间大修一下吧。</p>
-<p>就这样，欢迎评论。</p>
+<p>我编写了以上代码，并保存为 <code>timeout.bat</code>，随后我执行它，奇怪的事情发生了：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="hljs-template-variable">&#123;执行一次程序的输出&#125;</span><span class="language-xml"></span><br><span class="language-xml"></span><span class="hljs-template-variable">&#123;执行一次程序的输出&#125;</span><span class="language-xml"></span><br><span class="language-xml"></span><span class="hljs-template-variable">&#123;执行一次程序的输出&#125;</span><span class="language-xml"></span><br><span class="language-xml">...</span><br></code></pre></td></tr></table></figure>
+
+<p>我得到了以上的运行输出，而正确的输出应该为：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&#123;执行一次程序的输出&#125;<br><br>等待 XX 秒，按 CTRL+C 退出 <span class="hljs-built_in">..</span>.<br><br>正在<span class="hljs-built_in"> Ping </span>127.0.0.1 具有 32 字节的数据:<br>来自 127.0.0.1 的回复: 字节=32 时间&lt;1ms <span class="hljs-attribute">TTL</span>=128<br>来自 127.0.0.1 的回复: 字节=32 时间&lt;1ms <span class="hljs-attribute">TTL</span>=128<br>来自 127.0.0.1 的回复: 字节=32 时间&lt;1ms <span class="hljs-attribute">TTL</span>=128<br>来自 127.0.0.1 的回复: 字节=32 时间&lt;1ms <span class="hljs-attribute">TTL</span>=128<br><br>127.0.0.1 的<span class="hljs-built_in"> Ping </span>统计信息:<br>    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，<br>往返行程的估计时间(以毫秒为单位):<br>    最短 = 0ms，最长 = 0ms，平均 = 0ms<br>&#123;执行一次程序的输出&#125;<br><span class="hljs-built_in">..</span>.<br></code></pre></td></tr></table></figure>
+
+<p>这么看，似乎延时以及之后的 Ping 并没有被执行，而是被“跳过”了，这令我十分不解，于是我陷入了思考……</p>
+<p>突然我灵光一闪，似乎 <code>timeout</code> 既可以指代 Windows 环境变量下的 <code>timeout.exe</code>，也可以指代这个批处理 <code>timeout.bat</code>！</p>
+<p>想通这一点后，我将批处理的文件名改为 <code>timegetout.bat</code> 并保存，于是它正常的运行了起来。</p>
+<p>这便是一个很重要的特性：cmd 检索环境变量的优先级是要低于检索命令执行的目录的。</p>
+<p>可以轻松的证明这一点：在 <code>C:\Windows</code> 下放入一个内容为 <code>echo printest</code> 的 <code>printest.bat</code>，并使用 Win + R 打开命令提示符输入 <code>printest</code> 并执行，可以得到以下日志：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">Microsoft Windows [版本 <span class="hljs-number">10.0</span>.xxxxx.xxxx]<br>(c) Microsoft Corporation。保留所有权利。<br><br><span class="hljs-symbol">C:</span>\Users\Example&gt;printest<br><span class="hljs-symbol">C:</span>\Users\Example&gt;echo printest<br>printest<br><br><span class="hljs-symbol">C:</span>\Users\Example&gt;<br></code></pre></td></tr></table></figure>
+
+<p>现在，我们在 <code>C:\Users\Example</code> 下放入一个内容为 <code>ping 127.0.0.1</code> 的 <code>printest.bat</code> 后重复上述步骤可以得到以下日志：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs routeros">Microsoft Windows [版本 10.0.xxxxx.xxxx]<br>(c) Microsoft Corporation。保留所有权利。<br><br>C:\Users\Example&gt;printest<br>C:\Users\Example&gt;ping 127.0.0.1<br>正在<span class="hljs-built_in"> Ping </span>127.0.0.1 具有 32 字节的数据:<br>来自 127.0.0.1 的回复: 字节=32 时间&lt;1ms <span class="hljs-attribute">TTL</span>=128<br>来自 127.0.0.1 的回复: 字节=32 时间&lt;1ms <span class="hljs-attribute">TTL</span>=128<br>来自 127.0.0.1 的回复: 字节=32 时间&lt;1ms <span class="hljs-attribute">TTL</span>=128<br>来自 127.0.0.1 的回复: 字节=32 时间&lt;1ms <span class="hljs-attribute">TTL</span>=128<br><br>127.0.0.1 的<span class="hljs-built_in"> Ping </span>统计信息:<br>    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，<br>往返行程的估计时间(以毫秒为单位):<br>    最短 = 0ms，最长 = 0ms，平均 = 0ms<br><br>C:\Users\Example&gt;<br></code></pre></td></tr></table></figure>
+
+<p>以上是对这个特性的介绍和证明。</p>
+<p>那么它有什么用呢？用途有很多。</p>
+<p>比如说，我们可以通过这个特性构成递归或迭代。<span class="heimu" title="你知道的太多了">Demo 代码被吃掉了（</span></p>
 
                 
               </div>
@@ -336,12 +323,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%9D%82%E8%B0%88/" class="category-chain-item">杂谈</a>
+  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E6%9D%82%E8%B0%88/%E6%97%A5%E5%B8%B8/" class="category-chain-item">日常</a>
+  <a href="/categories/%E6%8A%80%E6%9C%AF/%E8%AE%B0%E5%BD%95/" class="category-chain-item">记录</a>
   
   
 
@@ -363,8 +350,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>一次突发事故的抢修</div>
-      <div>https://www.initbili.top/2022/c9e528dcc770/</div>
+      <div>Windows 批处理脚本在特定情况下的一个有趣现象</div>
+      <div>https://www.initbili.top/2023/3b05db071bc1/</div>
     </div>
     <div class="license-meta">
       
@@ -376,7 +363,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月30日</div>
+          <div>2023年1月21日</div>
         </div>
       
       
@@ -401,9 +388,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/76edc2121eba/" title="Windows 系统下的高精度网络时间守时配置">
+                      <a href="/2023/2b803cba7147/" title="code-server Windows 部署指南">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Windows 系统下的高精度网络时间守时配置</span>
+                        <span class="hidden-mobile">code-server Windows 部署指南</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -411,8 +398,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/74cf12f2759b/" title="为你的 Hexo 定制标签语法！">
-                        <span class="hidden-mobile">为你的 Hexo 定制标签语法！</span>
+                      <a href="/2022/76edc2121eba/" title="Windows 系统下的高精度网络时间守时配置">
+                        <span class="hidden-mobile">Windows 系统下的高精度网络时间守时配置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
