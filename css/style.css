@@ -1,6 +1,6 @@
 /* Initial heart's Blog CSS*/
-/* 2022-12-9 */
-/* 除声明出处的部分，依照 MIT 授权，使用需要保留作者与来源。 */
+/* 2023-04-01 */
+/* 除声明出处的部分外，其余依照 MIT 授权，使用需要保留作者与来源。 */
 /* 无特殊情况不会改动的部分作压缩处理。 */
 
 /* 站点字体 */
@@ -35,10 +35,10 @@
 .heimu,.heimu rt{background-color:#252525}.heimu,.heimu a,a .heimu,a.new .heimu,span.heimu a.new,span.heimu a.external,span.heimu a.external:visited,span.heimu a.extiw,span.heimu a.extiw:visited,span.heimu a.mw-disambig,span.heimu a.mw-redirect{transition:color 0.13s linear;color:#252525;text-shadow:none}span.heimu:hover,span.heimu:active{color:white}span.heimu:hover a,a:hover span.heimu{color:lightblue}span.heimu:hover a:visited,a:visited:hover span.heimu{color:#C5CAE9}span.heimu:hover a.new,a.new:hover span.heimu{color:#FCC}span.heimu a.new:hover:visited,a.new:hover:visited span.heimu{color:#EF9A9A}span.heimu:hover a.extiw:visited,a.extiw:visited:hover span.heimu{color:#D1C4E9}
 /* MoeGirlHeimu End */
 
-/* 特别添加的 CSS */
-/* 在需要时，这段 CSS 将生效。 */
-/* 希望生效的次数越少越好...... */
-/* 最近一次注释于 2022-12-9，没有及时注释的原因是无法操作托管存储。 */
+/* 特别添加的 CSS
+    在需要时，这段 CSS 将生效。
+    希望生效的次数越少越好......
+    最近一次注释于 2022-12-9，没有及时注释的原因是无法操作托管存储。 */
 /* http://www.news.cn/2022-12/07/c_1129187864.htm */
 
 /* （取消注释于，后不会再说明）2022-12-2  Jiang */

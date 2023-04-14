@@ -5,7 +5,7 @@
 
 
 
-<head><!-- hexo injector head_begin start --><link rel="preconnect" href="https://initialheart.oss.aunly.cn"><link rel="preconnect" href="https://at.alicdn.com"><link rel="preconnect" href="https://cdn.bootcdn.net"><!-- hexo injector head_begin end -->
+<head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="//initialheart.oss.aunly.cn/CC0/Ann_H_logo.webp">
   <link rel="icon" href="//initialheart.oss.aunly.cn/CC0/Ann_H_logo.webp">
@@ -26,7 +26,7 @@
 <meta property="og:description" content="不久前，我在我的服务器上部署了一个 code-server 服务，为了进一步确保安全，我为站点配置了 HTTP 基本身份验证。本文记录过程及经验供以后自己或任何人参考。 写在开始：环境要求Nginx（废话）、最新的 OpenSSL（本文使用 OpenSSL 3.0.5 5 Jul 2022，也可采用其他方式得到密码摘要）。 一、配置1.生成密码摘要经测试，服务器环境使用的 Nginx 1.20.2">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-08T12:00:00.000Z">
-<meta property="article:modified_time" content="2023-03-08T12:16:43.966Z">
+<meta property="article:modified_time" content="2023-03-09T04:48:43.487Z">
 <meta property="article:author" content="Initial heart">
 <meta property="article:tag" content="Initialheart,技术博客,个人博客,博客,编程,网络,信息技术,安全,信息安全,Blog,CSharp,C#,C,Java,Python,Web,QQBot,Bot,初心,初心Initial_heart">
 <meta name="twitter:card" content="summary_large_image">
@@ -73,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"www.initbili.top","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":55,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":50}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":3},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"www.initbili.top","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":55,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":50}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":3},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -119,7 +119,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -131,7 +131,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -143,7 +143,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -155,7 +155,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -163,15 +163,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -273,7 +274,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年3月8日 晚上
+                    本文最后更新于：2023年3月9日 下午
                   
                 
               </p>
@@ -322,6 +323,7 @@
 <p>对于一般的客户端，首先，客户端像往常的 HTTP(S) 请求一样向服务器发送请求。服务器将返回 <code>401（Unauthorized）</code> 状态码，并为返回附上 <code>WWW-Authenticate</code> 标头，其中包含了进行验证的方法（在这里是 <code>Basic</code>）及上文设置的 <code>realm</code>。此时，客户端将显示密码提示，在用户输入正确的用户凭据后，客户端通过在请求中附上 <code>Authorization</code> 标头进行验证。</p>
 <p>（流程图，回头补上）</p>
 <p>Basic 验证在 HTTP 环境下是<strong>不安全</strong>的。因为它使用明文传输用户凭据。因此，原则上，不应在未应用 HTTPS 或类似技术加密连接时使用 Basic 验证保护重要内容。尽管 RFC 7617 中说明 Basic 验证使用 base64 算法处理内容，但 base64 是可逆的，等同于明文传输。</p>
+<p>尽管如此，Basic 验证仍有独属于它的优势：便携、易部署、兼容广。所以如果只是不希望让某些站点的内容被公开且公开也不会造成很大影响等不太重要的用途，可以使用 Basic 验证。</p>
 <p>当然，实际上，无论何时，<strong>不推荐</strong>使用 Basic 验证保护重要内容，至少不要让它成为唯一的保护。</p>
 <p>Enjoy!</p>
 
@@ -423,8 +425,10 @@
             </div>
 
             
-  <article id="comments" lazyload>
-    
+  
+  
+    <article id="comments" lazyload>
+      
   <div id="twikoo"></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -448,7 +452,8 @@
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-  </article>
+    </article>
+  
 
 
           </article>
@@ -460,7 +465,10 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
